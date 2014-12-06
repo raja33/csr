@@ -113,8 +113,8 @@ Responses are returned in <code>JSON format;</code> every response will have the
 
 <table style="width: 100%; margin: 12px 0 0 0;">
 <tbody><tr><td colspan="2"><strong>Required Parameters</strong></td></tr>
-<tr><td colspan="2">authUser</td></tr>
-<tr><td colspan="2">authPass</td></tr>
+<tr><td >authUser</td><td><code>xxxxx</code></td></tr>
+<tr><td >authPass</td><td><code>xxxxx</code></td></tr>
 </tbody></table>
 
 ### User Login on POST method  [POST]
@@ -141,7 +141,7 @@ Responses are returned in <code>JSON format;</code> every response will have the
 # Group Patient Register
 
 
-<p>User login attributes:</p>
+<p>Patient Register attributes:</p>
 <ul>
 <li><p><strong>authUser</strong> <code>string</code> - unique name of the User in the system</p></li>
 <li><p><strong>authPass</strong> <code>string</code> - base64_encode of password used in this filed for crypt.</p></li>
@@ -155,12 +155,25 @@ Responses are returned in <code>JSON format;</code> every response will have the
 <li><p><strong>ACL</strong> <code>array</code> - Current User having Generic Access Control Lists.</p></li>
 </ul>
 
+
+<table style="width: 100%; margin: 12px 0 0 0;">
+<tbody><tr><td colspan="2"><strong>Required Parameters</strong></td></tr>
+<tr><td >authUser</td><td><code>xxxxx</code></td></tr>
+<tr><td >authPass</td><td><code>xxxxx</code></td></tr>
+<tr><td colspan="2"><strong>Optional Parameters</strong></td></tr>
+<tr><td >page</td><td>Minimum 1, maximum 1000.</td></tr>
+<tr><td >sort_by</td><td>Only 'created_at` is currently supported.</td></tr>
+<tr><td >sort_by</td><td>`created_at.desc` or `created_at.asc`</td></tr>
+<tr><td >language</td><td>ISO 639-1 code. Without one set, we default to the language set in the requested account.</td></tr>
+</tbody></table>
+
+
 ## Patient Register [/Patient/register]
 
 <p><pre class="json">
 <code>
  Request method : POST<br/>
- Resource URI : /User/login<br/>
+ Resource URI : /Patient/register<br/>
  Request Content type :application/json<br/>
  Request variables : {"authUser":"xxxxx","authPass":"xxxxx"}</code>
 </pre></p>
@@ -174,18 +187,6 @@ Responses are returned in <code>JSON format;</code> every response will have the
 + Response 201 (application/json)
 
         {"success":{"Message":"Login Successful!","authUser":"admin","Username":"Administrator Administrator","Facility":"Dr. Metha Hospital","authUserID":"9AD5C9F8-52AC-3B34-446F-8B14B593D385","ACL":["Administrators"]}}
-
-
-
-+ Request (application/x-www-form-urlencoded)
-
-        authUser=xxxxx&authPass=xxxxx
-
-+ Response 201 (application/json)
-
-        {"success":{"Message":"Login Successful!","authUser":"admin","Username":"Administrator Administrator","Facility":"Dr. Metha Hospital","authUserID":"9AD5C9F8-52AC-3B34-446F-8B14B593D385","ACL":["Administrators"]}}
-
-
 
 
 
