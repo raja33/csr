@@ -1,0 +1,197 @@
+FORMAT: 1A
+HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
+
+# CSR Health care
+
+<p>Corporate social responsibility <code>(CSR)</code> is a health care EMR <code>(Electronic Medical Records)</code> Software, Implementing Clinical concept with Android Tablet.</p>
+<br/><p>An EMR contains the standard medical and clinical data gathered in one provider’s office. Electronic health records (EHR) go beyond the data collected in the provider’s office and include a more comprehensive patient history.</p>
+<br/><h3>Server</h3><br/><p> PHP <code>5.3 </code> and mysql <code>5.6</code>.</p>
+<p>For example we use <code>android retrofit</code> to connect to this <code>REST API</code>.</p>
+
+<em>**Note: This content is currently DRAFT and under development**</em>
+
+#Overview
+
+<ul>
+<li><p>All Api access is at <code>https://tmx-india.cloudapp.net/xxxxxxxx/interface/tmx-india/</code></p></li>
+<li><p>All Api access is based on  API Mode such as <code>“development”</code>, <code>“test”</code>, and <code>“production”</code></p><br/><br/>
+<p>- e.g: <code>API development Mode</code> <br/><br/> <code>https://tmx-india.cloudapp.net/xxxxxxx_dev/interface/tmx-india/</code><br/><br/>
+<code>API test Mode</code><br/><br/>  <code>https://tmx-india.cloudapp.net/xxxxxxx/interface/tmx-india/</code></p></li>
+<li><p>All data response as <code>JSON OBJECT</code>.</p></li>
+<li><p>Client can send any kind of data with supportable format of header content-type</p></li>
+</ul>
+
+##Requests
+
+<p>All API methods are described by a HTTP method (e.g. GET, POST, PUT, DELETE) and a URL endpoint.</p>
+<p>For example: <code>REQUEST_METHOD:</code>  <code>POST</code>, <code>URL pattern</code>   <code>/User/login</code> Requests data is required </p>
+<p>- e.g.: <code>User login </code> - it must be supplied in the request body as a <code>JSON object</code> and the <code>Content-Type: application/json</code> header needs to be set.</p>
+<p>Hence:<br/><pre><code>if request supplied in the request body as a  JSON object  and the  Content-Type: application/json  header needs to be set.</code></pre></p>
+ 
+<em>**Note: The request content and content-type on header should be same.**</em>
+
+##Responses
+
+Responses are returned in <code>JSON format;</code> every response will have the <code>Content-Type: application/json</code> header set.
+<h3>Response Status</h3>
+
+<p>All responses from the API use a standard HTTP status code. Common status codes you will see while using the API are:</p>
+<ul>
+<li><p><code>2xx </code>  <code>Successful</code>- the request was successful and a resource was created</p></li>
+<li><p><code>200 </code>  <code>OK </code>- the request completed successfully (POST calls return 201 instead)</p></li>
+<li><p><code>201 </code>  <code>Created </code>- the request was successful and a resource was created</p></li>
+<li><p><code>3xx </code>  <code>Redirection </code>- Server redirect if it's need. </p></li>
+<li><p><code>301 </code>  <code>Moved Permanently</code>- Server redirect if it's need. </p></li>
+<li><p><code>4xx </code>  <code>Client Error </code>- the request could not be understood by server or client was missing required parameters. </p></li>
+<li><p><code>400 </code>  <code>Bad Request </code>- the request could not be understood or was missing required parameters. </p></li>
+<li><p><code>401 </code>  <code>Unauthorized </code>- authentication failed or user doesn't have permissions for requested operation. </p></li>
+<li><p><code>403 </code>  <code>Forbidden </code>-  access denied, currently authorized user doesn't have access to the resource. </p></li>
+<li><p><code>404 </code>  <code>Not Found </code>-  resource was not found. </p></li>
+<li><p><code>405 </code>  <code>Method Not Allowed </code>-  requested method is not supported for resource. </p></li>
+<li><p><code>5xx </code>  <code>Server Error </code>- something went wrong serverside. Likely a transient issue, but if you get repeated 5XX errors, please contact support. </p></li>
+</ul> 
+
+## Authentication
+
+<p>All User need to Login their application before getting started.<p>
+<p>Login credential such as : <code>Username</code> & <code>Password</code><p>
+<p>After Successful Login server send an unique UUID for the User ,  Every request needs a valid UUID key for further request </p>
+
+# Group API
+
+<p><em>Notes related resources of the **API**</em></p>
+<p>Every Request need a <code>REQUEST METHOD</code> , <code>specified URL</code> and required <code>request data</code></p>
+
+# Group User Login
+
+<p>User login attributes:</p>
+<ul>
+<li><p><strong>authUser</strong> <code>string</code> - unique name of the User in the system</p></li>
+<li><p><strong>authPass</strong> <code>string</code> - base64_encode of password used in this filed for crypt.</p></li>
+<li><p><strong>success</strong> <code>object</code> - Client request with REQUEST_METHOD , URL pattern and Parameters to the server, Server response as an success object .</p></li>
+<li><p><strong>failure</strong> <code>object</code> -  Client request with invalid REQUEST_METHOD or invalid URL pattern or invalid Parameters to the server, Server response as an failure object .</p></li>
+<li><p><strong>Message</strong> <code>string</code> - Server return message based on credential.</p></li>
+<li><p><strong>authUser</strong> <code>string</code> - Authenticated unique name of the User in the system.</p></li>
+<li><p><strong>Username</strong> <code>string</code> - Authenticated Name of the User in the system.</p></li>
+<li><p><strong>Facility</strong> <code>string</code> - Facility of the current User.</p></li>
+<li><p><strong>authUserID</strong> <code>string</code> - Unique UUID for the current User.</p></li>
+<li><p><strong>ACL</strong> <code>array</code> - Current User having Generic Access Control Lists.</p></li>
+</ul>
+
+## User Login on GET [/User/login?authUser=xxxxx&authPass=xxxxxx]
+
+<p><pre class="json">
+<code>
+ Request method : GET<br/>
+ Resource URI : /User/:login<br/>
+ Request Content type :application/json<br/>
+ Request Query:authUser=xxxxx&authPass=xxxxx
+ For example<br/>Request URL: https://yourdomain.com/User/:login?authUser=xxxxx&authPass=xxxxxx</code>
+</pre></p>
+
+### User Login on GET method [GET]
+
++ Response 200 (application/json)
+
+
+        {"success":{"Message":"Login Successful!","authUser":"admin","Username":"Administrator Administrator","Facility":"Dr. Metha Hospital","authUserID":"9AD5C9F8-52AC-3B34-446F-8B14B593D385","ACL":["Administrators"]}}
+        
++ Parameters
+    + login (required , `string` , `login?` `)  this is used as a key.
+    + authUser (required , `string` , `admin` `)  this is used as a key.
+    + authPass (required , `string` , `xxxxxx` `)  this is used as a key  encripted base 64 value to be used.
+
+## User Login on POST [/User/login]
+
+<p><pre class="json">
+<code>
+ Request method : POST<br/>
+ Resource URI : /User/login<br/>
+ Request Content type :application/json<br/>
+ Request variables : {"authUser":"xxxxx","authPass":"xxxxx"}</code>
+</pre></p>
+
+### User Login on POST method  [POST]
+
++ Request (application/json)
+
+        {"authUser":"xxxxx","authPass":"xxxxx"}
+
++ Response 201 (application/json)
+
+        {"success":{"Message":"Login Successful!","authUser":"admin","Username":"Administrator Administrator","Facility":"Dr. Metha Hospital","authUserID":"9AD5C9F8-52AC-3B34-446F-8B14B593D385","ACL":["Administrators"]}}
+
+
+
++ Request (application/x-www-form-urlencoded)
+
+        authUser=xxxxx&authPass=xxxxx
+
++ Response 201 (application/json)
+
+        {"success":{"Message":"Login Successful!","authUser":"admin","Username":"Administrator Administrator","Facility":"Dr. Metha Hospital","authUserID":"9AD5C9F8-52AC-3B34-446F-8B14B593D385","ACL":["Administrators"]}}
+
+
+
+# Group Patient Register
+
+
+<p>User login attributes:</p>
+<ul>
+<li><p><strong>authUser</strong> <code>string</code> - unique name of the User in the system</p></li>
+<li><p><strong>authPass</strong> <code>string</code> - base64_encode of password used in this filed for crypt.</p></li>
+<li><p><strong>success</strong> <code>object</code> - Client request with REQUEST_METHOD , URL pattern and Parameters to the server, Server response as an success object .</p></li>
+<li><p><strong>failure</strong> <code>object</code> -  Client request with invalid REQUEST_METHOD or invalid URL pattern or invalid Parameters to the server, Server response as an failure object .</p></li>
+<li><p><strong>Message</strong> <code>string</code> - Server return message based on credential.</p></li>
+<li><p><strong>authUser</strong> <code>string</code> - Authenticated unique name of the User in the system.</p></li>
+<li><p><strong>Username</strong> <code>string</code> - Authenticated Name of the User in the system.</p></li>
+<li><p><strong>Facility</strong> <code>string</code> - Facility of the current User.</p></li>
+<li><p><strong>authUserID</strong> <code>string</code> - Unique UUID for the current User.</p></li>
+<li><p><strong>ACL</strong> <code>array</code> - Current User having Generic Access Control Lists.</p></li>
+</ul>
+
+## Patient Register [/Patient/register]
+
+<p><pre class="json">
+<code>
+ Request method : POST<br/>
+ Resource URI : /User/login<br/>
+ Request Content type :application/json<br/>
+ Request variables : {"authUser":"xxxxx","authPass":"xxxxx"}</code>
+</pre></p>
+
+### User Login on POST method  [POST]
+
++ Request (application/json)
+
+        {"authUser":"xxxxx","authPass":"xxxxx"}
+
++ Response 201 (application/json)
+
+        {"success":{"Message":"Login Successful!","authUser":"admin","Username":"Administrator Administrator","Facility":"Dr. Metha Hospital","authUserID":"9AD5C9F8-52AC-3B34-446F-8B14B593D385","ACL":["Administrators"]}}
+
+
+
++ Request (application/x-www-form-urlencoded)
+
+        authUser=xxxxx&authPass=xxxxx
+
++ Response 201 (application/json)
+
+        {"success":{"Message":"Login Successful!","authUser":"admin","Username":"Administrator Administrator","Facility":"Dr. Metha Hospital","authUserID":"9AD5C9F8-52AC-3B34-446F-8B14B593D385","ACL":["Administrators"]}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
