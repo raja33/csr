@@ -175,6 +175,136 @@ Responses are returned in <code>JSON format;</code> every response will have the
             {success: {Message: "Logout Successful."}}
 
 
+# Group Patient Data collection
+
+
+<p>Data collection attributes:</p>
+<ul>
+<li><p><strong>AUTH_KEY</strong> <code>string</code> - unique UUID of the User in the system , it is to be passed on Headers</p></li>
+<li><p><strong>auth</strong> <code>string</code> - authenticate user stay on login to request and retrieve data from server  or logout, it is to be passed on Headers</p></li>
+<li><p><strong>success</strong> <code>object</code> - Client request with REQUEST_METHOD , URL pattern and Parameters to the server, Server response as an success object .</p></li>
+<li><p><strong>failure</strong> <code>object</code> -  Client request with invalid REQUEST_METHOD or invalid URL pattern or invalid Parameters to the server, Server response as an failure object .</p></li>
+</ul>
+
+<table style="width: 100%; margin: 12px 0 0 0;">
+<tbody><tr><td colspan="2"><strong>Required Header Parameters</strong></td></tr>
+<tr><td >auth</td><td><code>login</code></td></tr>
+<tr><td >AUTH_KEY</td><td><code>xxxxx</code></td></tr>
+</tbody></table>
+
+## Patient Register Form [/demographics/form]
+
+<p><pre class="json">
+<code>
+ Request method : POST<br/>
+ Resource URI : /demographics/form<br/>
+ Request Content type :application/json</code>
+</pre></p>
+
+### Patient Register Form  [POST]
+
++ Request (application/json)
+
+    + Headers
+    
+            auth: login
+            AUTH_KEY: 9AD5C9F8-52AC-3B34-446F-8B14B593D385
+       
++ Response 200 (application/json)
+    
+    + Body
+
+            {"success":{"form_pubpid":{"tag_name":"Biometric","required":1},"form_fname":{"tag_name":"First Name","required":1},"form_lname":{"tag_name":"Last name","required":1},"form_DOB":{"tag_name":"Date of birth","required":1},"form_age":{"tag_name":"Age","required":1},"form_sex":{"tag_name":"sex","this_options":{"Unassigned":"Unassigned","Female":"Female","Male":"Male"},"required":1},"form_status":{"tag_name":"Status","this_options":{"Unassigned":"Unassigned","married":"Married","single":"Single","divorced":"Divorced","widowed":"Widowed","separated":"Separated","domestic partner":"Domestic Partner"},"required":1},"form_photo":{"tag_name":"Photograph","required":1},"form_genericname1":{"tag_name":"Blood Group","this_options":{"Unassigned":"Unassigned","O+":"O+","A+":"A+","B+":"B+","AB+":"AB+","O-":"O-","A-":"A-","B-":"B-","AB-":"AB-"},"required":0},"form_street":{"tag_name":"Door no, Street name","required":0},"form_genericval2":{"tag_name":"Village","required":0},"form_genericval1":{"tag_name":"Taluk","required":0},"form_city":{"tag_name":"City","required":0},"form_genericname2":{"tag_name":"District","required":1},"form_state":{"tag_name":"State","this_options":{"Unassigned":"Unassigned","AN":"Andaman and Nicobar Islands","AP":"Andhra Pradesh","AR":"Arunachal Pradesh","AS":"Assam","BI":"Bihar","CH":"Chandigarh","DA":"Dadra and Nagar Haveli","DM":"Daman and Diu","DE":"Delhi","GO":"Goa","GU":"Gujarat","HA":"Haryana","HP":"Himachal Pradesh","JA":"Jammu and Kashmir","KA":"Karnataka","KE":"Kerala","LI":"Lakshadweep Islands","MP":"Madhya Pradesh","MA":"Maharashtra","MN":"Manipur","ME":"Meghalaya","MI":"Mizoram","NA":"Nagaland","OR":"Orissa","PO":"Pondicherry","PU":"Punjab","RA":"Rajasthan","SI":"Sikkim","TN":"Tamil Nadu","TR":"Tripura","UP":"Uttar Pradesh","WB":"West Bengal"},"required":1},"form_postal_code":{"tag_name":"Pin code","required":1},"form_phone_cell":{"tag_name":"Mobile Number","required":0},"form_phone_home":{"tag_name":"Land line","required":0},"form_email":{"tag_name":"Contact Email","required":0},"form_guardiansname":{"tag_name":"Emergency Contact Name","required":0},"form_contact_relationship":{"tag_name":"Emergency Contact RelationShip","required":0},"form_phone_contact":{"tag_name":"Emergency Contact Phone","required":0},"form_occupation":{"tag_name":"Occupation","required":1},"form_em_name":{"tag_name":"Employer Name","required":1},"form_em_street":{"tag_name":"Employer Address","required":1},"form_usertext11":{"tag_name":"Risk Factors","this_checkbox":{"form_usertext11[vv]":"Varicose Veins","form_usertext11[ht]":"Hypertension","form_usertext11[db]":"Diabetes","form_usertext11[sc]":"Sickle Cell","form_usertext11[fib]":"Fibroids","form_usertext11[pid]":"PID (Pelvic Inflammatory Disease)","form_usertext11[mig]":"Severe Migraine","form_usertext11[hd]":"Heart Disease","form_usertext11[str]":"Thrombosis\/Stroke","form_usertext11[hep]":"Hepatitis","form_usertext11[gb]":"Gall Bladder Condition","form_usertext11[br]":"Breast Disease","form_usertext11[dpr]":"Depression","form_usertext11[all]":"Allergies","form_usertext11[inf]":"Infertility","form_usertext11[ast]":"Asthma","form_usertext11[ep]":"Epilepsy","form_usertext11[cl]":"Contact Lenses","form_usertext11[coc]":"Contraceptive Complication (specify)","form_usertext11[oth]":"Other (specify)"},"required":0},"form_userarea11":{"tag_name":"Risk Factors Others","this_checkbox":[],"required":0},"form_exams":{"tag_name":"Exams\/Tests","this_text":{"form_exams[brs]":{"this_text":"Breast Exam","this_radio":{"radio_exams[brs][1]":"N\/A","radio_exams[brs][2]":"Normal","radio_exams[brs][3]":"Abnormal"}},"form_exams[cec]":{"this_text":"Cardiac Echo","this_radio":{"radio_exams[cec][1]":"N\/A","radio_exams[cec][2]":"Normal","radio_exams[cec][3]":"Abnormal"}},"form_exams[ecg]":{"this_text":"ECG","this_radio":{"radio_exams[ecg][1]":"N\/A","radio_exams[ecg][2]":"Normal","radio_exams[ecg][3]":"Abnormal"}},"form_exams[gyn]":{"this_text":"Gynecological Exam","this_radio":{"radio_exams[gyn][1]":"N\/A","radio_exams[gyn][2]":"Normal","radio_exams[gyn][3]":"Abnormal"}},"form_exams[mam]":{"this_text":"Mammogram","this_radio":{"radio_exams[mam][1]":"N\/A","radio_exams[mam][2]":"Normal","radio_exams[mam][3]":"Abnormal"}},"form_exams[phy]":{"this_text":"Physical Exam","this_radio":{"radio_exams[phy][1]":"N\/A","radio_exams[phy][2]":"Normal","radio_exams[phy][3]":"Abnormal"}},"form_exams[pro]":{"this_text":"Prostate Exam","this_radio":{"radio_exams[pro][1]":"N\/A","radio_exams[pro][2]":"Normal","radio_exams[pro][3]":"Abnormal"}},"form_exams[rec]":{"this_text":"Rectal Exam","this_radio":{"radio_exams[rec][1]":"N\/A","radio_exams[rec][2]":"Normal","radio_exams[rec][3]":"Abnormal"}},"form_exams[sic]":{"this_text":"Sigmoid\/Colonoscopy","this_radio":{"radio_exams[sic][1]":"N\/A","radio_exams[sic][2]":"Normal","radio_exams[sic][3]":"Abnormal"}},"form_exams[ret]":{"this_text":"Retinal Exam","this_radio":{"radio_exams[ret][1]":"N\/A","radio_exams[ret][2]":"Normal","radio_exams[ret][3]":"Abnormal"}},"form_exams[flu]":{"this_text":"Flu Vaccination","this_radio":{"radio_exams[flu][1]":"N\/A","radio_exams[flu][2]":"Normal","radio_exams[flu][3]":"Abnormal"}},"form_exams[pne]":{"this_text":"Pneumonia Vaccination","this_radio":{"radio_exams[pne][1]":"N\/A","radio_exams[pne][2]":"Normal","radio_exams[pne][3]":"Abnormal"}},"form_exams[ldl]":{"this_text":"LDL","this_radio":{"radio_exams[ldl][1]":"N\/A","radio_exams[ldl][2]":"Normal","radio_exams[ldl][3]":"Abnormal"}},"form_exams[hem]":{"this_text":"Hemoglobin","this_radio":{"radio_exams[hem][1]":"N\/A","radio_exams[hem][2]":"Normal","radio_exams[hem][3]":"Abnormal"}},"form_exams[psa]":{"this_text":"PSA","this_radio":{"radio_exams[psa][1]":"N\/A","radio_exams[psa][2]":"Normal","radio_exams[psa][3]":"Abnormal"}}},"required":0},"form_text_tobacco":{"tag_name":"Tobacco Type","required":0},"form_tobacco":{"tag_name":"Tobacco","required":0},"form_coffee":{"tag_name":"Coffee","required":0},"form_alcohol":{"tag_name":"Alcohol","required":0},"form_recreational_drugs":{"tag_name":"Recreational Drugs","required":0},"form_counseling":{"tag_name":"Counselling","required":0},"form_exercise_patterns":{"tag_name":"Exercise Patterns","required":0},"form_hazardous_activities":{"tag_name":"Hazardous Activities","required":0},"form_userarea12":{"tag_name":"Life style Others","required":0},"form_relatives_cancer":{"tag_name":"Cancer","required":0},"form_relatives_tuberculosis":{"tag_name":"Tuberculosis","required":0},"form_relatives_diabetes":{"tag_name":"Diabetes","required":0},"form_relatives_high_blood_pressure":{"tag_name":"High Blood Pressure","required":0},"form_relatives_heart_problems":{"tag_name":"Heart Problems","required":0},"form_relatives_stroke":{"tag_name":"Stroke","required":0},"form_relatives_epilepsy":{"tag_name":"Epilepsy","required":0},"form_relatives_mental_illness":{"tag_name":"Mental Illness","required":0},"form_relatives_suicide":{"tag_name":"Suicide","required":0}}}
+
+
+## New Patient Register [/demographics/new]
+
+<p><pre class="json">
+<code>
+ Request method : POST<br/>
+ Resource URI : /demographics/new<br/>
+ Request Content type :application/json</code>
+</pre></p>
+
+<table style="width: 100%; margin: 12px 0 0 0;">
+<tbody><tr><td colspan="2"><strong>Required Header Parameters</strong></td></tr>
+<tr><td >auth</td><td><code>login</code></td></tr>
+<tr><td >AUTH_KEY</td><td><code>xxxxx</code></td></tr>
+</tbody></table>
+
+<p>Data collection attributes:</p>
+<table style="width: 100%; margin: 12px 0 0 0;">
+<tr><td >form_pubpid</td><td>Biometric ( Finger print) value <code>required</code> <code>alphanumeric</code></td></tr>
+<tr><td >form_fname</td><td><code>Patient first name</code></td></tr>
+<tr><td >form_lname</td><td><code>Patient last name</code></td></tr>
+<tr><td >form_DOB/form_age </td><td><code>Patient date of birth or age</code></td></tr>
+<tr><td >form_sex</td><td><code>Patient sex info</code></td></tr>
+<tr><td >form_status</td><td><code>Patient marital status</code></td></tr>
+<tr><td >form_photo</td><td><code>Patient Photograph</code></td></tr>
+<tr><td >form_genericname1</td><td><code>Patient Blood Group</code></td></tr>
+<tr><td ></td><td></td></tr>
+<tr><td >form_street</td><td><code>Patient Address Door no, Street name</code></td></tr>
+<tr><td >form_genericval2</td><td><code>Patient Address Village</code></td></tr>
+<tr><td >form_genericval1</td><td><code>Patient Address Taluk</code></td></tr>
+<tr><td >form_city</td><td><code>Patient Address</code></td></tr>
+<tr><td >form_genericname2</td><td><code>Patient Address</code></td></tr>
+<tr><td >form_state</td><td><code>Patient Address</code></td></tr>
+<tr><td >form_postal_code</td><td><code>Patient Address Pin code</code></td></tr>
+<tr><td ></td><td></td></tr>
+<tr><td >form_phone_cell</td><td><code>Patient Mobile Number</code></td></tr>
+<tr><td >form_phone_home</td><td><code>Patient Land line</code></td></tr>
+<tr><td >form_email</td><td><code>Patient Contact Email</code></td></tr>
+<tr><td ></td><td></td></tr>
+<tr><td >form_guardiansname</td><td><code>Patient Emergency Contact Name</code></td></tr>
+<tr><td >form_contact_relationship</td><td><code>Patient Emergency Contact RelationShip</code></td></tr>
+<tr><td >form_phone_contact</td><td><code>Patient Emergency Contact Phone</code></td></tr>
+<tr><td ></td><td></td></tr>
+<tr><td >form_occupation</td><td><code>Patient Occupation</code></td></tr>
+<tr><td >form_em_name</td><td><code>Patient Employer Name</code></td></tr>
+<tr><td >form_em_street</td><td><code>Patient Employer Address</code></td></tr>
+<tr><td ></td><td></td></tr>
+<tr><td >form_usertext11</td><td><code>Risk Factors</code></td></tr>
+<tr><td >form_userarea11</td><td><code>Risk Factors Others</code></td></tr>
+<tr><td >form_exams</td><td><code>Exams/Tests</code></td></tr>
+<tr><td ></td><td></td></tr>
+<tr><td >form_text_tobacco</td><td><code>Tobacco Type</code></td></tr>
+<tr><td >form_tobacco</td><td><code>Tobacco</code></td></tr>
+<tr><td >form_coffee</td><td><code>Coffee</code></td></tr>
+<tr><td >form_alcohol</td><td><code>Alcohol</code></td></tr>
+<tr><td >form_recreational_drugs</td><td><code>Recreational Drugs</code></td></tr>
+<tr><td >form_counseling</td><td><code>Counselling</code></td></tr>
+<tr><td >form_exercise_patterns</td><td><code>Exercise Patterns</code></td></tr>
+<tr><td >form_hazardous_activities</td><td><code>Hazardous Activities</code></td></tr>
+<tr><td >form_userarea12</td><td><code>Life style Others</code></td></tr>
+<tr><td ></td><td></td></tr>
+<tr><td >form_relatives_cancer</td><td><code>Cancer</code></td></tr>
+<tr><td >form_relatives_tuberculosis</td><td><code>Tuberculosis</code></td></tr>
+<tr><td >form_relatives_diabetes</td><td><code>Diabetes</code></td></tr>
+<tr><td >form_relatives_heart_problems</td><td><code>High Blood Pressure</code></td></tr>
+<tr><td >form_relatives_stroke</td><td><code>Stroke</code></td></tr>
+<tr><td >form_relatives_epilepsy</td><td><code>Epilepsy</code></td></tr>
+<tr><td >form_relatives_mental_illness</td><td><code>Mental Illness</code></td></tr>
+<tr><td >form_relatives_suicide</td><td><code>Suicide</code></td></tr>
+
+</tbody></table>
+
+### New Patient Register   [POST]
+
++ Request (application/json)
+
+    + Headers
+    
+            auth: login
+            AUTH_KEY: 9AD5C9F8-52AC-3B34-446F-8B14B593D385
+            
+
+
++ Response 200 (application/json)
+    
+
+
+
+
 
 
 
