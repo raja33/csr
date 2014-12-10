@@ -235,33 +235,35 @@ Responses are returned in <code>JSON format;</code> every response will have the
 <p>Data collection attributes:</p>
 <table style="width: 100%; margin: 12px 0 0 0;">
 <tr><td >form_pubpid</td><td>Biometric ( Finger print) value <code>required</code> <code>alphanumeric</code></td></tr>
-<tr><td >form_fname</td><td><code>Patient first name</code></td></tr>
-<tr><td >form_lname</td><td><code>Patient last name</code></td></tr>
-<tr><td >form_DOB/form_age </td><td><code>Patient date of birth or age</code></td></tr>
-<tr><td >form_sex</td><td><code>Patient sex info</code></td></tr>
-<tr><td >form_status</td><td><code>Patient marital status</code></td></tr>
-<tr><td >form_photo</td><td><code>Patient Photograph</code></td></tr>
-<tr><td >form_genericname1</td><td><code>Patient Blood Group</code></td></tr>
+<tr><td >form_fname</td><td>Patient first name <code>required</code> <code>alpha</code></td></tr>
+<tr><td >form_lname</td><td>Patient last name   <code>required</code> <code>alpha</code></td></tr>
+<tr><td >form_DOB/form_age </td><td>Patient date of birth or age   <code>required</code> <code> Supported input date formats are:
+<br/>mm/dd/yyyy ,   mm/dd/yy   (assumes 20yy for yy < 10, else 19yy)
+<br/>yyyy/mm/dd ,  also mm-dd-yyyy, and mm.dd.yyyy, Age is an 3 digit Numeric Value.</code></td></tr>
+<tr><td >form_sex</td><td>Patient sex info   <code>required</code> <code>option</code></td></tr>
+<tr><td >form_status</td><td>Patient marital status   <code>required</code> <code>option</code></td></tr>
+<tr><td >form_photo</td><td>Patient Photograph   <code>required</code> <code>base64_encode file format</code></td></tr>
+<tr><td >form_genericname1</td><td>Patient Blood Group   <code>optional</code> <code>option</code></td></tr>
 <tr><td ></td><td></td></tr>
-<tr><td >form_street</td><td><code>Patient Address Door no, Street name</code></td></tr>
-<tr><td >form_genericval2</td><td><code>Patient Address Village</code></td></tr>
-<tr><td >form_genericval1</td><td><code>Patient Address Taluk</code></td></tr>
-<tr><td >form_city</td><td><code>Patient Address</code></td></tr>
-<tr><td >form_genericname2</td><td><code>Patient Address</code></td></tr>
-<tr><td >form_state</td><td><code>Patient Address</code></td></tr>
-<tr><td >form_postal_code</td><td><code>Patient Address Pin code</code></td></tr>
+<tr><td >form_street</td><td>Patient Address Door no, Street name   <code>optional</code> <code>string</code></td></tr>
+<tr><td >form_genericval2</td><td>Patient Address Village   <code>optional</code> <code>string</code></td></tr>
+<tr><td >form_genericval1</td><td>Patient Address Taluk   <code>optional</code> <code>string</code></td></tr>
+<tr><td >form_city</td><td>Patient Address  City <code>optional</code> <code>string</code></td></tr>
+<tr><td >form_genericname2</td><td>Patient Address  District <code>required</code> <code>string</code></td></tr>
+<tr><td >form_state</td><td>Patient Address  State <code>required</code> <code>option</code></td></tr>
+<tr><td >form_postal_code</td><td>Patient Address Pin code   <code>required</code> <code>numeric</code></td></tr>
 <tr><td ></td><td></td></tr>
-<tr><td >form_phone_cell</td><td><code>Patient Mobile Number</code></td></tr>
-<tr><td >form_phone_home</td><td><code>Patient Land line</code></td></tr>
-<tr><td >form_email</td><td><code>Patient Contact Email</code></td></tr>
+<tr><td >form_phone_cell</td><td>Patient Mobile Number   <code>optional</code> <code>numeric</code></td></tr>
+<tr><td >form_phone_home</td><td>Patient Land line   <code>optional</code> <code>numeric</code></td></tr>
+<tr><td >form_email</td><td>Patient Contact Email   <code>optional</code> <code>email address format</code></td></tr>
 <tr><td ></td><td></td></tr>
-<tr><td >form_guardiansname</td><td><code>Patient Emergency Contact Name</code></td></tr>
-<tr><td >form_contact_relationship</td><td><code>Patient Emergency Contact RelationShip</code></td></tr>
-<tr><td >form_phone_contact</td><td><code>Patient Emergency Contact Phone</code></td></tr>
+<tr><td >form_guardiansname</td><td>Patient Emergency Contact Name   <code>optional</code> <code>numeric</code></td></tr>
+<tr><td >form_contact_relationship</td><td>Patient Emergency Contact RelationShip   <code>optional</code> <code>string</code></td></tr>
+<tr><td >form_phone_contact</td><td>Patient Emergency Contact Phone   <code>optional</code> <code>numeric</code></td></tr>
 <tr><td ></td><td></td></tr>
-<tr><td >form_occupation</td><td><code>Patient Occupation</code></td></tr>
-<tr><td >form_em_name</td><td><code>Patient Employer Name</code></td></tr>
-<tr><td >form_em_street</td><td><code>Patient Employer Address</code></td></tr>
+<tr><td >form_occupation</td><td>Patient Occupation   <code>required</code> <code>alphanumeric</code></td></tr>
+<tr><td >form_em_name</td><td>Patient Employer Name   <code>required</code> <code>string</code></td></tr>
+<tr><td >form_em_street</td><td>Patient Employer Address   <code>required</code> <code>string</code></td></tr>
 <tr><td ></td><td></td></tr>
 <tr><td >form_usertext11</td><td><code>Risk Factors</code></td></tr>
 <tr><td >form_userarea11</td><td><code>Risk Factors Others</code></td></tr>
