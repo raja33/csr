@@ -49,7 +49,37 @@ Responses are returned in <code>JSON format;</code> every response will have the
 <li><p><code>404 </code>  <code>Not Found </code>-  resource was not found. </p></li>
 <li><p><code>405 </code>  <code>Method Not Allowed </code>-  requested method is not supported for resource. </p></li>
 <li><p><code>5xx </code>  <code>Server Error </code>- something went wrong serverside. Likely a transient issue, but if you get repeated 5XX errors, please contact support. </p></li>
-</ul> 
+</ul>
+
+<h1>Operations</h1>
+<p>We use RESTful verbs for all operations and methods.</p>
+<table><thead>
+<tr>
+<th>Verb</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><code>GET</code></td>
+<td>Used to select one or more items. Success returns 200 status code with json result item(s) in body.</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td>Used to create a new item. Success returns 201 status code with newly created json item in body.</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td>Used to update an item. Success returns 200 status code with updated json item in body.</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td>Used to delete an item. Success returns 204 status code with no body.</td>
+</tr>
+</tbody></table>
+
+<h1>Query Parameters</h1>
+<p>You can add query parameters to your requests, most commonly for <code>GET</code> requests.</p>
+<p><em>Example: http://www.sitename/com/api/v1/plist?page=2&amp;pageSize=10 will return page 2, of 10 results per page.</em></p>
 
 ## Authentication
 
@@ -66,8 +96,8 @@ Responses are returned in <code>JSON format;</code> every response will have the
 
 <p>User login attributes:</p>
 <ul >
-<li ><p ><small><strong>authUser</strong> <code>string</code> - unique name of the User in the system</small></p></li>
-<li ><p ><strong>authPass</strong> <code>string</code> - base64_encode of password used in this filed for crypt.</p></li>
+<li ><p class="tocColumnItemText"><small><strong>authUser</strong> <code>string</code> - unique name of the User in the system</small></p></li>
+<li ><p class="tocColumnItemText"><strong>authPass</strong> <code>string</code> - base64_encode of password used in this filed for crypt.</p></li>
 <li ><p ><strong>success</strong> <code>object</code> - Client request with REQUEST_METHOD , URL pattern and Parameters to the server, Server response as an success object .</p></li>
 <li ><p><strong>failure</strong> <code>object</code> - Client request with invalid REQUEST_METHOD or invalid URL pattern or invalid Parameters to the server, Server response as an failure object.</p></li>
 <li ><p><strong>Message</strong> <code>string</code> - Server return message based on credential.</p></li>
