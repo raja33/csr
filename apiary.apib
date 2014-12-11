@@ -113,14 +113,14 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 </ul>
 
 
-##User Login on GET [/User/login?authUser=xxxxx&authPass=xxxxxx]
+##User Login on GET [/User/login?authUser=admin&authPass=YWRtaW5sc2FwcEAyMDE0]
 
 <pre class="json">
 <code><span>Request method : GET</span>
 <span>Resource URI : /User/:login</span>
 <span>Request Content type :application/json</span>
-<span>Request Query:authUser=xxxxx&authPass=xxxxx</span>
-<span>For example<br/>Request URL: https://yourdomain.com/User/:login?authUser=xxxxx&authPass=xxxxxx</span></code>
+<span>Request Query:authUser=admin&authPass=YWRtaW5sc2FwcEAyMDE0</span>
+<span>For example<br/>Request URL: https://yourdomain.com/User/:login?authUser=admin&authPass=YWRtaW5sc2FwcEAyMDE0</span></code>
 </pre>
 
 ### User Login on GET method [GET]
@@ -134,7 +134,7 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 + Parameters
     + login (required , `string` , `login?` `) ... this is used as a key.
     + authUser (required , `string` , `admin`) ... name of the User in the system.
-    + authPass (required , `string` , `xxxxxx` `) ... unique name of the User key  encripted base64_encode value to be used.
+    + authPass (required , `string` , `YWRtaW5sc2FwcEAyMDE0` `) ... unique name of the User key  encripted base64_encode value to be used.
 
 ##User Login on POST [/User/login]
 
@@ -153,7 +153,7 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 
     + Body
     
-            {"authUser":"xxxxx","authPass":"xxxxx"}
+            {"authUser":"admin","authPass":"YWRtaW5sc2FwcEAyMDE0"}
 
 + Response 201 (application/json)
 
@@ -164,7 +164,7 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 
 + Request (application/x-www-form-urlencoded)
 
-        authUser=xxxxx&authPass=xxxxx
+        authUser=admin&authPass=YWRtaW5sc2FwcEAyMDE0
 
 + Response 201 (application/json)
     
