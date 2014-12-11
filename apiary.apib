@@ -13,7 +13,7 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 
 <em><small>**Note: This content is currently DRAFT and under development**</small></em>
 
-##Overview
+# Group Overview
 
 <ul>
 <li><p>All Api access is at <code>https://www.sitename.com/xxxxxx/interface/api/v1/</code></p></li>
@@ -24,7 +24,7 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 <li><p>Client can send any kind of data with supportable format of header content-type</p></li>
 </ul>
 
-## Requests
+##Requests
 
 <h2>Requests  Format</h2>
 <p>All API methods are described by a HTTP method (e.g. GET, POST, PUT, DELETE) and a URL endpoint.</p>
@@ -34,10 +34,12 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
  
 <em>**Note: The request content and content-type on header should be same.**</em>
 
-## Responses
+##Responses
 
 <h2>Responses  Format</h2>
+
 <p>Responses are returned in <code>JSON format;</code> every response will have the <code>Content-Type: application/json</code> header set.</p>
+
 <h3>Response Status</h3>
 
 <p>All responses from the API use a standard HTTP status code. Common status codes you will see while using the API are:</p>
@@ -56,9 +58,8 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 <li><p><code>5xx </code>  <code>Server Error </code>- something went wrong serverside. Likely a transient issue, but if you get repeated 5XX errors, please contact support. </p></li>
 </ul>
 
-## Operations
+##Operations
 
-<h2>Operations</h2>
 <p>We use RESTful verbs for all operations and methods.</p>
 <table>
 <thead><tr><th>Verb</th><th>Description</th></tr></thead>
@@ -70,14 +71,14 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 </tbody>
 </table>
 
-## Query Parameters
+##Query Parameters
 
 <h2>Query Parameters</h2>
 <p>You can add query parameters to your requests, most commonly for <code>GET</code> requests.</p>
 <p><em>Example: http://www.sitename/com/api/v1/plist?page=2&amp;pageSize=10 will return page 2, of 10 results per page.</em></p>
 
-## Authentication
-<h2>Authentication</h2>
+##Authentication
+
 <p>All User need to Login their application before getting started.<p>
 <p>Login credential such as : <code>Username</code> & <code>Password</code><p>
 <p>After Successful Login in to server, server send an unique UUID for the User,  Every request needs a valid UUID key for further request</p>
