@@ -206,33 +206,31 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 
             {success: {Message: "Logout Successful."}}
 
-
-
 # Group Patient Data collection
-
 
 <p>Data collection attributes:</p>
 <ul>
-<li><p><strong>AUTH_KEY</strong> <code>string</code> - unique UUID of the User in the system , it is to be passed on Headers</p></li>
-<li><p><strong>auth</strong> <code>string</code> - authenticate user stay on login to request and retrieve data from server  or logout, it is to be passed on Headers</p></li>
-<li><p><strong>success</strong> <code>object</code> - Client request with REQUEST_METHOD , URL pattern and Parameters to the server, Server response as an success object .</p></li>
-<li><p><strong>failure</strong> <code>object</code> -  Client request with invalid REQUEST_METHOD or invalid URL pattern or invalid Parameters to the server, Server response as an failure object .</p></li>
+<li><p class="tocColumnItemText"><strong>AUTH_KEY</strong> <code>string</code> - unique UUID of the User in the system , it is to be passed on Headers</p></li>
+<li><p class="tocColumnItemText"><strong>auth</strong> <code>string</code> - authenticate user stay on login to request and retrieve data from server  or logout, it is to be passed on Headers</p></li>
+<li><p class="tocColumnItemText"><strong>success</strong> <code>object</code> - Client request with REQUEST_METHOD , URL pattern and Parameters to the server, Server response as an success object .</p></li>
+<li><p class="tocColumnItemText"><strong>failure</strong> <code>object</code> -  Client request with invalid REQUEST_METHOD or invalid URL pattern or invalid Parameters to the server, Server response as an failure object .</p></li>
 </ul>
 
 <table style="width: 100%; margin: 12px 0 0 0;">
-<tbody><tr><td colspan="2"><strong>Required Header Parameters</strong></td></tr>
+<tbody>
+<tr><td colspan="2"><strong>Required Header Parameters</strong></td></tr>
 <tr><td >auth</td><td><code>login</code></td></tr>
 <tr><td >AUTH_KEY</td><td><code>UUID</code></td></tr>
-</tbody></table>
+</tbody>
+</table>
 
 ## Patient Register Form [/demographics/form]
 
-<p><pre class="json">
-<code>
- Request method : POST<br/>
- Resource URI : /demographics/form<br/>
- Request Content type :application/json</code>
-</pre></p>
+<pre class="json">
+<code><span> Request method : POST<span>
+<span>Resource URI : /demographics/form<span>
+<span>Request Content type :application/json<span></code>
+</pre>
 
 ### Patient Register Form  [POST]
 
@@ -252,18 +250,19 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 
 ## New Patient Register [/demographics/new]
 
-<p><pre class="json">
-<code>
- Request method : POST<br/>
- Resource URI : /demographics/new<br/>
- Request Content type :application/json</code>
-</pre></p>
+<pre class="json">
+<code><span> Request method : POST<span>
+<span>Resource URI : /demographics/new<span>
+<span>Request Content type :application/json<span></code>
+</pre>
 
 <table style="width: 100%; margin: 12px 0 0 0;">
-<tbody><tr><td colspan="2"><strong>Required Header Parameters</strong></td></tr>
+<tbody>
+<tr><td colspan="2"><strong>Required Header Parameters</strong></td></tr>
 <tr><td >auth</td><td><code>login</code></td></tr>
 <tr><td >AUTH_KEY</td><td><code>xxxxx</code></td></tr>
-</tbody></table>
+</tbody>
+</table>
 
 <p>Data collection attributes:</p>
 <table style="width: 100%; margin: 12px 0 0 0;">
