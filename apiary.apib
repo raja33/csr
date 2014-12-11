@@ -66,10 +66,10 @@ Responses are returned in <code>JSON format;</code> every response will have the
 
 <p>User login attributes:</p>
 <ul>
-<li><p><strong>authUser</strong> <code>string</code> - unique name of the User in the system</p></li>
-<li><p><strong>authPass</strong> <code>string</code> - base64_encode of password used in this filed for crypt.</p></li>
+<li><p><span><strong>authUser</strong> <code>string</code> - unique name of the User in the system<span></p></li>
+<li><p><span><strong>authPass</strong> <code>string</code> - base64_encode of password used in this filed for crypt.<span></p></li>
 <li><p><strong>success</strong> <code>object</code> - Client request with REQUEST_METHOD , URL pattern and Parameters to the server, Server response as an success object .</p></li>
-<li><p><strong>failure</strong> <code>object</code> -  Client request with invalid REQUEST_METHOD or invalid URL pattern or invalid Parameters to the server, Server response as an failure object .</p></li>
+<li><p><strong>failure</strong> <code>object</code> - Client request with invalid REQUEST_METHOD or invalid URL pattern or invalid Parameters to the server, Server response as an failure object.</p></li>
 <li><p><strong>Message</strong> <code>string</code> - Server return message based on credential.</p></li>
 <li><p><strong>authUser</strong> <code>string</code> - Authenticated unique name of the User in the system.</p></li>
 <li><p><strong>Username</strong> <code>string</code> - Authenticated Name of the User in the system.</p></li>
@@ -87,7 +87,7 @@ Responses are returned in <code>JSON format;</code> every response will have the
 ## User Login on GET [/User/login?authUser=xxxxx&authPass=xxxxxx]
 
 <p><pre class="json">
-<code><span >Request method : GET</span>
+<code><span>Request method : GET</span>
 <span>Resource URI : /User/:login</span>
 <span>Request Content type :application/json</span>
 <span>Request Query:authUser=xxxxx&authPass=xxxxx</span>
@@ -110,7 +110,7 @@ Responses are returned in <code>JSON format;</code> every response will have the
 ## User Login on POST [/User/login]
 
 <p><pre class="json">
-<code>
+<code><span>
  Request method : POST<br/>
  Resource URI : /User/login<br/>
  Request Content type :application/json<br/>
