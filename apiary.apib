@@ -98,6 +98,11 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 # Group User 
 
 <p>User login attributes:</p>
+<table style="width: 100%; margin: 12px 0 0 0;">
+<tbody><tr><td colspan="2"><strong>Required Parameters</strong></td></tr>
+<tr><td >authUser</td><td><code>xxxxx</code></td></tr>
+<tr><td >authPass</td><td><code>xxxxx</code></td></tr>
+</tbody></table>
 <ul >
 <li ><p class="tocColumnItemText"><strong>authUser</strong> <code>string</code> - unique name of the User in the system</p></li>
 <li ><p class="tocColumnItemText"><strong>authPass</strong> <code>string</code> - base64_encode of password used in this filed for crypt.</p></li>
@@ -111,11 +116,6 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 <li ><p class="tocColumnItemText"><strong>ACL</strong> <code>array</code> - Current User having Generic Access Control Lists.</p></li>
 </ul>
 
-<table style="width: 100%; margin: 12px 0 0 0;">
-<tbody><tr><td colspan="2"><strong>Required Parameters</strong></td></tr>
-<tr><td >authUser</td><td><code>xxxxx</code></td></tr>
-<tr><td >authPass</td><td><code>xxxxx</code></td></tr>
-</tbody></table>
 
 ## User Login on GET [/User/login?authUser=xxxxx&authPass=xxxxxx]
 
