@@ -271,7 +271,7 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 
 <p>Data collection attributes:</p>
 <table style="width: 100%; margin: 12px 0 0 0;">
-<tr><td >form_pubpid</td><td>Biometric ( Finger print) value <code>required</code> <code>alphanumeric</code></td></tr>
+<tr><td >form_pubpid</td><td>Biometric ( Finger print) Unique value or system will generate unique value.<code>required</code> <code>alphanumeric</code></td></tr>
 <tr><td >form_fname</td><td>Patient first name <code>required</code> <code>alpha</code></td></tr>
 <tr><td >form_lname</td><td>Patient last name   <code>required</code> <code>alpha</code></td></tr>
 <tr><td >form_DOB/form_age </td><td>Patient date of birth or age   <code>required</code> <code> Supported input date formats are:
@@ -301,11 +301,12 @@ yyyy/mm/dd ,  also mm-dd-yyyy, and mm.dd.yyyy, Age is an 3 digit Numeric Value.<
 <tr><td >form_occupation</td><td>Patient Occupation   <code>required</code> <code>alphanumeric</code></td></tr>
 <tr><td >form_em_name</td><td>Patient Employer Name   <code>required</code> <code>string</code></td></tr>
 <tr><td >form_em_street</td><td>Patient Employer Address   <code>required</code> <code>string</code></td></tr>
-<tr><td ></td><td></td></tr>
+<tr><td colspan="2">&nbsp;</td></tr>
 <tr><td >form_usertext11</td><td>Risk Factors   <code>optional</code> <code>array of risk factors</code></td></tr>
-<tr><td >form_userarea11</td><td>Risk Factors Others   <code>optional</code> <code>string</code></td></tr>
+<tr><td >form_userarea11</td><td>Risk Factors Others   <code>optional</code> <code>array</code></td></tr>
 <tr><td >form_exams</td><td>Exams/Tests   <code>optional</code> <code>array contain  Exams/Tests  name  and result </code></td></tr>
-<tr><td ></td><td></td></tr>
+<tr><td >radio_exams</td><td>Exams/Tests options  <code>optional</code> <code>array contain  Exams/Tests options  </code></td></tr>
+<tr><td colspan="2">&nbsp;</td></tr>
 <tr><td >form_text_tobacco</td><td>Tobacco Type   <code>optional</code> <code>string</code></td></tr>
 <tr><td >form_tobacco</td><td>Tobacco   <code>optional</code> <code>array contain  frequency of usage and status if quit on date.</code></td></tr>
 <tr><td >form_coffee</td><td>Coffee   <code>optional</code> <code>array contain status if quit on date.</code></td></tr>
@@ -337,7 +338,13 @@ yyyy/mm/dd ,  also mm-dd-yyyy, and mm.dd.yyyy, Age is an 3 digit Numeric Value.<
     
             auth: login
             AUTH_KEY: 91B0B365-7BF7-4724-FEC3-4848E07312B5
-
+    + Body
+    
+            {"form_pubpid":"Biometricq","form_fname":"First Name","form_lname":"Last name","form_DOB":"2014-12-15","form_age":"","form_sex":"Male","form_status":"single","form_photo":"data:image\/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAAB4CAYAAAB1ovlvAAAABHNCSVQICAgIfAhkiAAABGNJREFUeJzt3E9oHFUAx\/HfzG72T7I1m9am2BKTqPinNLRY\/FNEIlK1KEVFEPTswUsRTx4KevSgJ8GTF6+i9CDVg4cqBVFBsbQoVISmNjVbU9o0f3c3M288bJJ2SaHJpb8Rv5\/LhtkMzCNfHvPeg0T1ej0TYBK7HwD\/bwQIKwKEFQHCigBhRYCwIkBYESCsCBBWBAgrAoQVAcKKAGFFgLAiQFgRIKwIEFYECCsChBUBwooAYUWAsCJAWBEgrAgQVgQIKwKEFQHCigBhRYCwIkBYFd0PgG5ZJEXZ9c8ok0LcfU2SCpmUxNJ29ehQeUijUU1tBZ1fvKrjYUrzhbB2T54xA+ZMMXQ+V+MJcfc1qXM9iaXne0f05bYX9MDALv1dTDRbjvX4vXt0bOBZ7Um3eAawSRH\/ITVfVme5fXG\/nqjs1La0pIlkTl+1\/tKVQqLlgtSTSgcqg\/qg\/4COzP2oXxcvrc10USa9NLxXR67t0uvT36hRSrwDugVmwBx6q29MH905rp4tvWpUE+0eGtbn25\/RHtVUDJ1I39y6V5\/O\/q5fmt3xSdIXF0\/rTP+yXqmO2MawUbwD5swj1UG9XBvVG9Mn9UeYURZJ8dXf9NrIfr3fflSH50+oVOvV\/erXO0sXFN3wjrcaYhwynZq5qEPxoD5O\/\/QMZIOYAXNmvD6i4wvndDbMSurMakksHbt4WrWBfo236uotlhSyTNNRa939aSTFQbqslvrintv9+JtGgDlTK1U02ZrVjYvXWNJi0lZDTdULFS20lhRHkR5qVtfdH6szE+6KetW4SaB5Q4A5cy1parfuWHufS1cWJZViSUNpRVNRU+1mS9+Vr+rF8vC6++MgxcWCDlaH9G3auM1Pv3kEmDNfL53X0\/VRPRz6JIXOHyiO9F55TJPtWf1UnFEaSZ\/MnNHBnQ\/q1dagpLC2ZxgXpA+r+xUnQZ+lF7yD2QC2YXImyqTnRsZ0tHmfzl6Z0tnygp4s7FBaKent6ZOaCPMqZJ2Z8bGBu3V0yz4t\/XNF38czGohKGi\/t0ERlWe9e+kGTYcE9nFsiwJzJVhYRW+t1HdJdqhWLOtee04mlSSVJ0llkrPxuHKSeao+e6hvWPaopC0Gn2pf182JDaRas49goAsyh1VOQzqZ0rDQKKqed1fDq99L1Izqp++guWTk9yfsxnMQ+YC51byyHtXPfm3\/f\/XMWdc6J\/wvxSSxCYEaAsCJAWBEgrAgQVgQIKwKEFQHCigBhRYCwIkBYESCsCBBWBAgrAoQVAcKKAGFFgLAiQFgRIKwIEFYECCsChBUBwooAYUWAsCJAWBEgrAgQVgQIKwKEFQHCigBhRYCwIkBYESCsCBBWBAgrAoQVAcKKAGFFgLAiQFgRIKwIEFYECCsChBUBwooAYUWAsCJAWBEgrAgQVgQIKwKEFQHCigBhRYCwIkBYESCsCBBWBAgrAoQVAcKKAGFFgLAiQFgRIKwIEFYECCsChBUBwooAYUWAsCJAWP0Lie0T6S1FkqMAAAAASUVORK5CYII=","form_genericname1":"A+","form_street":"Door no, Street name","form_genericval2":"Village","form_genericval1":"Taluk","form_city":"City","form_genericname2":"District","form_state":"AP","form_postal_code":"628151","form_phone_cell":"0987654321","form_phone_home":"1234567890","form_email":"rajasekar.jeya@gmail.com","form_guardiansname":"Emergency Contact Name","form_contact_relationship":"Contact RelationShip","form_phone_contact":"1029384756","form_occupation":"Occupation","form_em_name":"Employer Name","form_em_street":"Employer Address","form_usertext11":{"vv":"Varicose Veins","ht":"Hypertension","db":"Diabetes","sc":"Sickle Cell","fib":"Fibroids","pid":"PID (Pelvic Inflammatory Disease)","mig":"Severe Migraine","hd":"Heart Disease","str":"Thrombosis\/Stroke","hep":"Hepatitis","gb":"Gall Bladder Condition","br":"Breast Disease","dpr":"Depression","all":"Allergies","inf":"Infertility","ast":"Asthma","ep":"Epilepsy","cl":"Contact Lenses","coc":"Contraceptive Complication (specify)","oth":"Other (specify)"},"form_userarea11":["Varicose Veins","Hypertension","Diabetes"],"form_exams":{"brs":"Breast Exam","cec":"Cardiac Echo","ecg":"ECG","gyn":"Gynecological","mam":"Mammogram","phy":"Physical","pro":"","rec":"","sic":"","ret":"","flu":"","pne":"","ldl":"","hem":"Hemoglobin","psa":"PSA"},"radio_exams":{"brs":"2","cec":"3","ecg":"2","gyn":"3","mam":"2","phy":"2","hem":"2","psa":"2"},"form_text_tobacco":"Tobacco Type","form_tobacco":"15","form_coffee":"Coffee","form_alcohol":"Alcohol","form_recreational_drugs":"Recreational Drugs","form_counseling":"Counselling","form_exercise_patterns":"Exercise Patterns","form_hazardous_activities":"Hazardous Activities","form_userarea12":"Life style Others","form_relatives_cancer":"Cancer","form_relatives_tuberculosis":"Tuberculosis","form_relatives_diabetes":"Diabetes","form_relatives_high_blood_pressure":"High Blood Pressure","form_relatives_heart_problems":"Tuberculosis","form_relatives_stroke":"Stroke","form_relatives_epilepsy":"Epilepsy","form_relatives_mental_illness":"Mental Illness","form_relatives_suicide":"Suicide","form_history_father":"Father","form_history_mother":"Mothers","form_history_siblings":"Siblings","form_history_spouse":"Spouse","form_history_offspring":"Child"}
 
 + Response 200 (application/json)
     
+    + Body
+    
+            {"success":{"Patient Details":{"pid":"internal_id","fname":"FIRST NAME","lname":"LAST NAME","DOB":"11-DEC-2014","DOB_YMD":"2014-12-11","street":"Door no, Street namE","genericval1":"Taluk","genericname2":"District","genericval2":"Village","city":"City","state":"Kerala","country_code":"IND","postal_code":"600001","occupation":"Occupation","phone_cell":"9876543210","status":"single","sex":"Female","pubpid":"UNIQUEID","genericname1":"O+","history_mother":"Mothers 's Name","guardiansname":"Emergency","Age_flag":"0","Regdate":2014-12-11 12:12:12,"Since":"0 day","history_father":"Father 's name","Age":"16 years","images":"csr_data\/72-DB05A752FF6DA04229BEF6A60765CA01.png"}}}
+
