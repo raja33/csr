@@ -271,7 +271,7 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 
 <p>Data collection attributes:</p>
 <table style="width: 100%; margin: 12px 0 0 0;">
-<tr><td colspan="4">&nbsp;About Patient</td></tr>
+<tr><td colspan="4">&nbsp;<h3>About Patient</h3></td></tr>
 <tr><th> Parameter </th><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Description &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th> Recommented </th><th>data type </th></tr>
 <tr><td >form_pubpid</td><td>Biometric ( Finger print) Unique value or system will generate unique value.</td><td><code>required</code></td><td> <code>alphanumeric</code></td></tr>
 <tr><td >form_fname</td><td>Patient first name </td><td><code>required</code> </td><td><code>alpha</code></td></tr>
@@ -283,7 +283,7 @@ yyyy/mm/dd ,  also mm-dd-yyyy, and mm.dd.yyyy, Age is an 3 digit Numeric Value.<
 <tr><td >form_status</td><td>Patient marital status   </td><td><code>required</code> </td><td><code>option</code></td></tr>
 <tr><td >form_photo </td><td>Patient Photograph   </td><td><code>required</code> </td><td><code>base64_encode file format</code></td></tr>
 <tr><td >form_genericname1</td><td>Patient Blood Group  </td><td><code>optional</code> </td><td><code>option</code></td></tr>
-<tr><td colspan="4">&nbsp;Address</td></tr>
+<tr><td colspan="4">&nbsp;<h3>Address</h3></td></tr>
 <tr><td >form_street</td><td>Patient Address Door no, Street name  </td><td><code>optional</code> </td><td><code>string</code></td></tr>
 <tr><td >form_genericval2</td><td>Patient Address Village  </td><td> <code>optional</code> </td><td><code>string</code></td></tr>
 <tr><td >form_genericval1</td><td>Patient Address Taluk   </td><td><code>optional</code> </td><td><code>string</code></td></tr>
@@ -291,24 +291,24 @@ yyyy/mm/dd ,  also mm-dd-yyyy, and mm.dd.yyyy, Age is an 3 digit Numeric Value.<
 <tr><td >form_genericname2</td><td>Patient Address  District </td><td><code>required</code> </td><td><code>string</code></td></tr>
 <tr><td >form_state</td><td>Patient Address  State </td><td><code>required</code> </td><td><code>option</code></td></tr>
 <tr><td >form_postal_code</td><td>Patient Address Pin code  </td><td> <code>required</code> </td><td><code>numeric</code></td></tr>
-<tr><td colspan="4">&nbsp;Contact</td></tr>
+<tr><td colspan="4">&nbsp;<h3>Contact</h3></td></tr>
 <tr><td >form_phone_cell</td><td>Patient Mobile Number  </td><td> <code>optional</code> </td><td></td><td><code>numeric</code></td></tr>
 <tr><td >form_phone_home</td><td>Patient Land line   </td><td><code>optional</code> </td><td><code>numeric</code></td></tr>
 <tr><td >form_email</td><td>Patient Contact Email   </td><td><code>optional</code> </td><td><code>email address format</code></td></tr>
-<tr><td colspan="4">&nbsp;Emergency</td></tr>
+<tr><td colspan="4">&nbsp;<h3>Emergency</h3></td></tr>
 <tr><td >form_guardiansname</td><td>Patient Emergency Contact Name  </td><td> <code>optional</code> </td><td><code>numeric</code></td></tr>
 <tr><td >form_contact_relationship</td><td>Patient Emergency Contact RelationShip   </td><td><code>optional</code> </td><td><code>string</code></td></tr>
 <tr><td >form_phone_contact</td><td>Patient Emergency Contact Phone   </td><td><code>optional</code> </td><td><code>numeric</code></td></tr>
-<tr><td colspan="4">&nbsp;Employer with </td></tr>
+<tr><td colspan="4">&nbsp;<h3>Employer with </h3></td></tr>
 <tr><td >form_occupation</td><td>Patient Occupation   </td><td><code>required</code></td><td> <code>alphanumeric</code></td></tr>
 <tr><td >form_em_name</td><td>Patient Employer Name  </td><td> <code>required</code> </td><td><code>string</code></td></tr>
 <tr><td >form_em_street</td><td>Patient Employer Address   </td><td><code>required</code></td><td> <code>string</code></td></tr>
-<tr><td colspan="4">&nbsp;Risk </td></tr>
+<tr><td colspan="4">&nbsp;<h3>Risk</h3> </td></tr>
 <tr><td >form_usertext11</td><td>Risk Factors  </td><td> <code>optional</code> </td><td><code>array of risk factors</code></td></tr>
 <tr><td >form_userarea11</td><td>Risk Factors Others  </td><td> <code>optional</code> </td><td><code>array</code></td></tr>
 <tr><td >form_exams</td><td>Exams/Tests  </td><td> <code>optional</code></td><td> <code>array contain  Exams/Tests  name  and result </code></td></tr>
 <tr><td >radio_exams</td><td>Exams/Tests options  </td><td><code>optional</code> </td><td><code>array contain  Exams/Tests options  </code></td></tr>
-<tr><td colspan="4">&nbsp;Life style</td></tr>
+<tr><td colspan="4">&nbsp;<h3>Life style</h3></td></tr>
 <tr><td >form_text_tobacco</td><td>Tobacco Type   </td><td><code>optional</code></td><td> <code>string</code></td></tr>
 <tr><td >form_tobacco</td><td>Tobacco   </td><td><code>optional</code></td><td> <code>array contain  frequency of usage and status if quit on date.</code></td></tr>
 <tr><td >form_coffee</td><td>Coffee   </td><td><code>optional</code></td><td> <code>array contain status if quit on date.</code></td></tr>
@@ -318,7 +318,7 @@ yyyy/mm/dd ,  also mm-dd-yyyy, and mm.dd.yyyy, Age is an 3 digit Numeric Value.<
 <tr><td >form_exercise_patterns</td><td>Exercise Patterns  </td><td> <code>optional</code></td><td> <code>array contain status if quit on date.</code></td></tr>
 <tr><td >form_hazardous_activities</td><td>Hazardous Activities  </td><td> <code>optional</code></td><td> <code>array contain status if quit on date.</code></td></tr>
 <tr><td >form_userarea12</td><td>Life style Others  </td><td> <code>optional</code> </td><td><code>string</code></td></tr>
-<tr><td colspan="4">&nbsp; Relatives </td></tr>
+<tr><td colspan="4">&nbsp; <h3>Relatives </h3></td></tr>
 <tr><td >form_relatives_cancer</td><td>Cancer   </td><td><code>optional</code> </td><td><code>string</code></td></tr>
 <tr><td >form_relatives_tuberculosis</td><td>Tuberculosis  </td><td> <code>optional</code></td><td> <code>string</code></td></tr>
 <tr><td >form_relatives_diabetes</td><td>Diabetes   </td><td><code>optional</code></td><td> <code>string</code></td></tr>
@@ -327,7 +327,7 @@ yyyy/mm/dd ,  also mm-dd-yyyy, and mm.dd.yyyy, Age is an 3 digit Numeric Value.<
 <tr><td >form_relatives_epilepsy</td><td>Epilepsy  </td><td> <code>optional</code> </td><td><code>string</code></td></tr>
 <tr><td >form_relatives_mental_illness</td><td>Mental Illness  </td><td> <code>optional</code></td><td> <code>string</code></td></tr>
 <tr><td >form_relatives_suicide</td><td>Suicide   </td><td><code>optional</code></td><td> <code>string</code></td></tr>
-<tr><td colspan="4">&nbsp; Biological History </td></tr>
+<tr><td colspan="4">&nbsp; <h3>Biological History</h3> </td></tr>
 <tr><td >form_history_father</td><td>Father's Name   </td><td><code>optional</code></td><td> <code>string</code></td></tr>
 <tr><td >form_history_mother</td><td>Mother's Name  </td><td><code>optional</code></td><td> <code>string</code></td></tr>
 <tr><td >form_history_siblings</td><td>Siblings   </td><td><code>optional</code></td><td> <code>string</code></td></tr>
