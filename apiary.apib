@@ -103,12 +103,13 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 <li ><p class="tocColumnItemText"><strong>authUser</strong> <code>string</code> - unique name of the User in the system</p></li>
 <li ><p class="tocColumnItemText"><strong>authPass</strong> <code>string</code> - base64_encode of password used in this filed for crypt.</p></li>
 <li ><p><strong>Response attributes</strong></p></li>
+<li ><p class="tocColumnItemText"><strong>StatusCode</strong> <code>mixed</code> - Server return header message based on credential.</p></li>
 <li ><p class="tocColumnItemText"><strong>Message</strong> <code>string</code> - Server return message based on credential.</p></li>
 <li ><p class="tocColumnItemText"><strong>authUser</strong> <code>string</code> - Authenticated unique name of the User in the system.</p></li>
 <li ><p class="tocColumnItemText"><strong>Username</strong> <code>string</code> - Authenticated Name of the User in the system.</p></li>
 <li ><p class="tocColumnItemText"><strong>Facility</strong> <code>string</code> - Facility of the current User.</p></li>
 <li ><p class="tocColumnItemText"><strong>authUserID</strong> <code>string</code> - Unique UUID for the current User.</p></li>
-<li ><p class="tocColumnItemText"><strong>ACL</strong> <code>array</code> - Current User having Generic Access Control Lists.</p></li>
+<li ><p class="tocColumnItemText"><strong>setControllerlevels</strong> <code>array of object</code> - Current User having Generic Access Control Lists.</p></li>
 </ul>
 
 
@@ -128,7 +129,7 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 
     + Body
     
-            {"success":{"Message":"Login Successful!","authUser":"admin","Username":"Administrator Administrator","Facility":"Dr. Metha Hospital","authUserID":"9AD5C9F8-52AC-3B34-446F-8B14B593D385","ACL":["Administrators"]}}
+            {"StatusCode":200,"Message":"Login Successful!","authUser":"admin","Username":"Administrator Administrator","Facility":"Dr. Metha Hospital","authUserID":"9AD5C9F8-52AC-3B34-446F-8B14B593D385","setControllerlevels":[{"ControllerName":"Administrators"}]}
         
 + Parameters
     + login (required , `login?` , `string`) ... this is used as a key.
