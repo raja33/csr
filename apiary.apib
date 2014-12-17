@@ -113,14 +113,14 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 </ul>
 
 
-##User Login on GET [/User/login?authUser=admin&authPass=YWRtaW5sc2FwcEAyMDE0]
+##User Login on GET [/user/login?authUser=admin&authPass=YWRtaW5sc2FwcEAyMDE0]
 
 <pre class="json">
 <code><span>Request method : GET</span>
-<span>Resource URI : /User/:login</span>
+<span>Resource URI : /user/:login</span>
 <span>Request Content type :application/json</span>
 <span>Request Query:authUser=admin&authPass=YWRtaW5sc2FwcEAyMDE0</span>
-<span>For example<br/>Request URL: https://yourdomain.com/User/:login?authUser=admin&authPass=YWRtaW5sc2FwcEAyMDE0</span></code>
+<span>For example<br/>Request URL: https://yourdomain.com/user/:login?authUser=admin&authPass=YWRtaW5sc2FwcEAyMDE0</span></code>
 </pre>
 
 ### User Login on GET method [GET]
@@ -129,7 +129,8 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 
     + Body
     
-            {"StatusCode":200,"Message":"Login Successful!","authUser":"admin","Username":"Administrator Administrator","Facility":"Dr. Metha Hospital","authUserID":"9AD5C9F8-52AC-3B34-446F-8B14B593D385","setControllerlevels":[{"ControllerName":"Administrators"}]}
+            {"StatusCode":200,"Message":"Login Successful!","authUser":"raj","Username":"Rajesh Testing","Facility":"Malar Hospital","authUserID":"E1BF1EF6-208B-9AAF-4A21-4AAA4E3D7B76","setControllerlevels":[{"ControllerName":"Clinicians"},{"ControllerName":"Front Office"},{"ControllerName":"Paramedical"},{"ControllerName":"Pharmacy"}]}
+            
         
 + Parameters
     + login (required , `login?` , `string`) ... this is used as a key.
@@ -137,11 +138,11 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
     + authPass (required , `YWRtaW5sc2FwcEAyMDE0` , `string`) ... unique name of the User key  encripted base64_encode value to be used.
     
 
-##User Login on POST [/User/login]
+##User Login on POST [/user/login]
 
 <pre class="json">
 <code><span> Request method : POST</span>
-<span>Resource URI : /User/login</span>
+<span>Resource URI : /user/login</span>
 <span>Request Content type :application/json</span>
 <span>Request variables : {"authUser":"xxxxx","authPass":"xxxxx"}</span></code>
 </pre>
@@ -160,8 +161,8 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 
     + Body
 
-            {"success":{"Message":"Login Successful!","authUser":"admin","Username":"Administrator Administrator","Facility":"Dr. Metha Hospital","authUserID":"9AD5C9F8-52AC-3B34-446F-8B14B593D385","ACL":["Administrators"]}}
-
+            {"StatusCode":200,"Message":"Login Successful!","authUser":"raj","Username":"Rajesh Testing","Facility":"Malar Hospital","authUserID":"E1BF1EF6-208B-9AAF-4A21-4AAA4E3D7B76","setControllerlevels":[{"ControllerName":"Clinicians"},{"ControllerName":"Front Office"},{"ControllerName":"Paramedical"},{"ControllerName":"Pharmacy"}]}
+            
 
 + Request (application/x-www-form-urlencoded)
 
@@ -171,13 +172,13 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
     
     + Body
 
-            {"success":{"Message":"Login Successful!","authUser":"admin","Username":"Administrator Administrator","Facility":"Dr. Metha Hospital","authUserID":"9AD5C9F8-52AC-3B34-446F-8B14B593D385","ACL":["Administrators"]}}
-
-## User Logout on POST [/User/logout]
+            {"StatusCode":200,"Message":"Login Successful!","authUser":"raj","Username":"Rajesh Testing","Facility":"Malar Hospital","authUserID":"E1BF1EF6-208B-9AAF-4A21-4AAA4E3D7B76","setControllerlevels":[{"ControllerName":"Clinicians"},{"ControllerName":"Front Office"},{"ControllerName":"Paramedical"},{"ControllerName":"Pharmacy"}]}
+            
+## User Logout on POST [/user/logout]
 
 <pre class="json">
 <code><span> Request method : POST</span>
-<span>Resource URI : /User/logout</span>
+<span>Resource URI : /user/logout</span>
 <span>Request Content type :application/json</span></code>
 </pre>
 
