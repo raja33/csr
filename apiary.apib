@@ -185,7 +185,7 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 <p>User Logout attributes:</p>
 
 <ul>
-<li><p class="tocColumnItemText"><strong>AUTH_KEY</strong> <code>string</code> - unique UUID of the User in the system , it is to be passed on Headers</p></li>
+<li><p class="tocColumnItemText"><strong>auth_key</strong> <code>string</code> - unique UUID of the User in the system , it is to be passed on Headers</p></li>
 <li><p class="tocColumnItemText"><strong>auth</strong> <code>string</code> - authenticate user stay on login to request and retrieve data from server  or logout, it is to be passed on Headers</p></li>
 </ul>
 
@@ -193,7 +193,7 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 <tbody>
 <tr><td colspan="2"><strong>Required Header Parameters</strong></td></tr>
 <tr><td >auth</td><td><code>logout</code></td></tr>
-<tr><td >AUTH_KEY</td><td><code>91B0B365-7BF7-4724-FEC3-4848E07312B5</code></td></tr>
+<tr><td >auth_key</td><td><code>91B0B365-7BF7-4724-FEC3-4848E07312B5</code></td></tr>
 </tbody>
 </table>
 
@@ -204,7 +204,7 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
     + Headers
     
             auth: login
-            AUTH_KEY: 91B0B365-7BF7-4724-FEC3-4848E07312B5
+            auth_key: 91B0B365-7BF7-4724-FEC3-4848E07312B5
        
 + Response 200 (application/json)
     
