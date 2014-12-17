@@ -103,7 +103,7 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 <li ><p class="tocColumnItemText"><strong>authUser</strong> <code>string</code> - unique name of the User in the system</p></li>
 <li ><p class="tocColumnItemText"><strong>authPass</strong> <code>string</code> - base64_encode of password used in this filed for crypt.</p></li>
 <li ><p><strong>Response attributes</strong></p></li>
-<li ><p class="tocColumnItemText"><strong>StatusCode</strong> <code>mixed</code> - Server return header message based on credential.</p></li>
+<li ><p class="tocColumnItemText"><strong>StatusCode</strong> <code>mixed</code> - Server return header message based on credential.(201 status code indicates that a request was successful and as a result, a resource has been created)</p></li>
 <li ><p class="tocColumnItemText"><strong>Message</strong> <code>string</code> - Server return message based on credential.</p></li>
 <li ><p class="tocColumnItemText"><strong>authUser</strong> <code>string</code> - Authenticated unique name of the User in the system.</p></li>
 <li ><p class="tocColumnItemText"><strong>Username</strong> <code>string</code> - Authenticated Name of the User in the system.</p></li>
@@ -125,11 +125,11 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 
 ### User Login on GET method [GET]
 
-+ Response 200 (application/json)
++ Response 201 (application/json)
 
     + Body
     
-            {"StatusCode":200,"Message":"Login Successful!","authUser":"raj","Username":"Rajesh Testing","Facility":"Malar Hospital","authUserID":"E1BF1EF6-208B-9AAF-4A21-4AAA4E3D7B76","setControllerlevels":[{"ControllerName":"Clinicians"},{"ControllerName":"Front Office"},{"ControllerName":"Paramedical"},{"ControllerName":"Pharmacy"}]}
+            {"StatusCode":201,"Message":"Login Successful!","authUser":"raj","Username":"Rajesh Testing","Facility":"Malar Hospital","authUserID":"E1BF1EF6-208B-9AAF-4A21-4AAA4E3D7B76","setControllerlevels":[{"ControllerName":"Clinicians"},{"ControllerName":"Front Office"},{"ControllerName":"Paramedical"},{"ControllerName":"Pharmacy"}]}
             
         
 + Parameters
@@ -161,7 +161,7 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 
     + Body
 
-            {"StatusCode":200,"Message":"Login Successful!","authUser":"raj","Username":"Rajesh Testing","Facility":"Malar Hospital","authUserID":"E1BF1EF6-208B-9AAF-4A21-4AAA4E3D7B76","setControllerlevels":[{"ControllerName":"Clinicians"},{"ControllerName":"Front Office"},{"ControllerName":"Paramedical"},{"ControllerName":"Pharmacy"}]}
+            {"StatusCode":201,"Message":"Login Successful!","authUser":"raj","Username":"Rajesh Testing","Facility":"Malar Hospital","authUserID":"E1BF1EF6-208B-9AAF-4A21-4AAA4E3D7B76","setControllerlevels":[{"ControllerName":"Clinicians"},{"ControllerName":"Front Office"},{"ControllerName":"Paramedical"},{"ControllerName":"Pharmacy"}]}
             
 
 + Request (application/x-www-form-urlencoded)
@@ -172,7 +172,7 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
     
     + Body
 
-            {"StatusCode":200,"Message":"Login Successful!","authUser":"raj","Username":"Rajesh Testing","Facility":"Malar Hospital","authUserID":"E1BF1EF6-208B-9AAF-4A21-4AAA4E3D7B76","setControllerlevels":[{"ControllerName":"Clinicians"},{"ControllerName":"Front Office"},{"ControllerName":"Paramedical"},{"ControllerName":"Pharmacy"}]}
+            {"StatusCode":201,"Message":"Login Successful!","authUser":"raj","Username":"Rajesh Testing","Facility":"Malar Hospital","authUserID":"E1BF1EF6-208B-9AAF-4A21-4AAA4E3D7B76","setControllerlevels":[{"ControllerName":"Clinicians"},{"ControllerName":"Front Office"},{"ControllerName":"Paramedical"},{"ControllerName":"Pharmacy"}]}
             
 ## User Logout on POST [/user/logout]
 
