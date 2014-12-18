@@ -210,7 +210,7 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
     
     + Body
 
-            {success: {Message: "Logout Successful."}}
+            {"StatusCode":200,"Message":"Logout Successful."}
 
 # Group Patient Data collection
 
@@ -218,15 +218,15 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 <ul>
 <li><p class="tocColumnItemText"><strong>AUTH_KEY</strong> <code>string</code> - unique UUID of the User in the system , it is to be passed on Headers</p></li>
 <li><p class="tocColumnItemText"><strong>auth</strong> <code>string</code> - authenticate user stay on login to request and retrieve data from server  or logout, it is to be passed on Headers</p></li>
-<li><p class="tocColumnItemText"><strong>success</strong> <code>object</code> - Client request with REQUEST_METHOD , URL pattern and Parameters to the server, Server response as an success object .</p></li>
-<li><p class="tocColumnItemText"><strong>failure</strong> <code>object</code> -  Client request with invalid REQUEST_METHOD or invalid URL pattern or invalid Parameters to the server, Server response as an failure object .</p></li>
+<li><p class="tocColumnItemText"><strong>StatusCode</strong> <code>200</code> - Client request with REQUEST_METHOD , URL pattern and Parameters to the server, Server response as an success result .</p></li>
+<li><p class="tocColumnItemText"><strong>StatusCode</strong> <code>400, 401</code> -  Client request with invalid REQUEST_METHOD or invalid URL pattern or invalid Parameters to the server, Server response as an failure result .</p></li>
 </ul>
 
 <table style="width: 100%; margin: 12px 0 0 0;">
 <tbody>
 <tr><td colspan="2"><strong>Required Header Parameters</strong></td></tr>
 <tr><td >auth</td><td><code>login</code></td></tr>
-<tr><td >AUTH_KEY</td><td><code>UUID</code></td></tr>
+<tr><td >auth_key</td><td><code>UUID</code></td></tr>
 </tbody>
 </table>
 
