@@ -276,66 +276,66 @@ The server does not meet one of the preconditions that the requester put on the 
 <table style="width: 100%; margin: 12px 0 0 0;">
 <thead><tr><th> Attributes </th><th colspan=2> Description </th><th>data type </th></tr></thead>
 <tbody>
-<tr><td ><span style="color:red">*</span><code>form_pubpid</code> <span style="color:FF0000;">*</span> </td><td colspan=2>Biometric ( Finger print) Unique value or system will generate unique value.</td><td> <code>alphanumeric</code></td></tr>
-<tr><td ><code>form_fname</code> <span style="color:red;">*</span> </td><td>Patient first name </td><td><code>alpha</code></td></tr>
-<tr><td ><code>form_lname</code> <span style="color:red;">*</span> </td><td>Patient last name  </td><td><code>alpha</code></td></tr>
-<tr><td ><code>form_DOB/form_age</code>  <span style="color:red">*</span> </td><td>Patient date of birth or age   </td><td><code> Supported input date formats are:
+<tr><td ><code>form_pubpid</code> <span style="color:red">*</span> </td><td colspan=2>Biometric ( Finger print) Unique value or system will generate unique value.</td><td> <code>alphanumeric</code></td></tr>
+<tr><td ><code>form_fname</code> <span style="color:red">*</span> </td><td colspan=2>Patient first name </td><td><code>alpha</code></td></tr>
+<tr><td ><code>form_lname</code> <span style="color:red">*</span> </td><td colspan=2>Patient last name  </td><td><code>alpha</code></td></tr>
+<tr><td ><code>form_DOB/form_age</code>  <span style="color:red">*</span> </td><td colspan=2>Patient date of birth or age   </td><td><code> Supported input date formats are:
 mm/dd/yyyy ,   mm/dd/yy   (assumes 20yy for yy < 10, else 19yy)
 yyyy/mm/dd ,  also mm-dd-yyyy, and mm.dd.yyyy, Age is an 3 digit Numeric Value.</code></td></tr>
-<tr><td ><code>form_sex</code> <span style="color:red">*</span> </td><td>Patient sex info   </td><td><code>option</code></td></tr>
-<tr><td ><code>form_status</code> <span style="color:red">*</span> </td><td>Patient marital status   </td><td><code>option</code></td></tr>
-<tr><td ><code>form_photo</code>  <span style="color:red">*</span> </td><td>Patient Photograph   </td><td><code>base64_encode file format</code></td></tr>
-<tr><td ><code>form_genericname1</code></td><td>Patient Blood Group  </td><td><code>option</code></td></tr>
+<tr><td ><code>form_sex</code> <span style="color:red">*</span> </td><td colspan=2>Patient sex info   </td><td><code>option</code></td></tr>
+<tr><td ><code>form_status</code> <span style="color:red">*</span> </td><td colspan=2>Patient marital status   </td><td><code>option</code></td></tr>
+<tr><td ><code>form_photo</code>  <span style="color:red">*</span> </td><td colspan=2>Patient Photograph   </td><td><code>base64_encode file format</code></td></tr>
+<tr><td ><code>form_genericname1</code></td><td colspan=2>Patient Blood Group  </td><td><code>option</code></td></tr>
 <tr><td colspan="3">&nbsp;<h4>Address</h4></td></tr>
-<tr><td ><code>form_street</code></td><td>Patient Address Door no, Street name  </td><td><code>string</code></td></tr>
-<tr><td ><code>form_genericval2</code></td><td>Patient Address Village  </td><td><code>string</code></td></tr>
-<tr><td ><code>form_genericval1</code></td><td>Patient Address Taluk   </td><td><code>string</code></td></tr>
-<tr><td ><code>form_city</code></td><td>Patient Address  City </td><td><code>string</code></td></tr>
-<tr><td ><code>form_genericname2</code> <span style="color:red">*</span> </td><td>Patient Address  District </td><td><code>string</code></td></tr>
-<tr><td ><code>form_state</code> <span style="color:red">*</span> </td><td>Patient Address  State </td><td><code>option</code></td></tr>
-<tr><td ><code>form_postal_code</code> <span style="color:red">*</span> </td><td>Patient Address Pin code  </td><td><code>numeric</code></td></tr>
+<tr><td ><code>form_street</code></td><td colspan=2>Patient Address Door no, Street name  </td><td><code>string</code></td></tr>
+<tr><td ><code>form_genericval2</code></td><td colspan=2>Patient Address Village  </td><td><code>string</code></td></tr>
+<tr><td ><code>form_genericval1</code></td><td colspan=2>Patient Address Taluk   </td><td><code>string</code></td></tr>
+<tr><td ><code>form_city</code></td><td colspan=2>Patient Address  City </td><td><code>string</code></td></tr>
+<tr><td ><code>form_genericname2</code> <span style="color:red">*</span> </td><td colspan=2>Patient Address  District </td><td><code>string</code></td></tr>
+<tr><td ><code>form_state</code> <span style="color:red">*</span> </td><td colspan=2>Patient Address  State </td><td><code>option</code></td></tr>
+<tr><td ><code>form_postal_code</code> <span style="color:red">*</span> </td><td colspan=2>Patient Address Pin code  </td><td><code>numeric</code></td></tr>
 <tr><td colspan="3">&nbsp;<h4>Contact</h4></td></tr>
-<tr><td ><code>form_phone_cell</code></td><td>Patient Mobile Number  </td><td></td><td><code>numeric</code></td></tr>
-<tr><td ><code>form_phone_home</code></td><td>Patient Land line   </td><td><code>numeric</code></td></tr>
-<tr><td ><code>form_email</code></td><td>Patient Contact Email   </td><td><code>email address format</code></td></tr>
+<tr><td ><code>form_phone_cell</code></td><td colspan=2>Patient Mobile Number  </td><td></td><td><code>numeric</code></td></tr>
+<tr><td ><code>form_phone_home</code></td><td colspan=2>Patient Land line   </td><td><code>numeric</code></td></tr>
+<tr><td ><code>form_email</code></td><td colspan=2>Patient Contact Email   </td><td><code>email address format</code></td></tr>
 <tr><td colspan="3">&nbsp;<h4>Emergency</h4></td></tr>
-<tr><td ><code>form_guardiansname</code></td><td>Patient Emergency Contact Name  </td><td><code>numeric</code></td></tr>
-<tr><td ><code>form_contact_relationship</code></td><td>Patient Emergency Contact RelationShip   </td><td><code>string</code></td></tr>
-<tr><td ><code>form_phone_contact</code></td><td>Patient Emergency Contact Phone   </td><td><code>numeric</code></td></tr>
+<tr><td ><code>form_guardiansname</code></td><td colspan=2>Patient Emergency Contact Name  </td><td><code>numeric</code></td></tr>
+<tr><td ><code>form_contact_relationship</code></td><td colspan=2>Patient Emergency Contact RelationShip   </td><td><code>string</code></td></tr>
+<tr><td ><code>form_phone_contact</code></td><td colspan=2>Patient Emergency Contact Phone   </td><td><code>numeric</code></td></tr>
 <tr><td colspan="3">&nbsp;<h4>Employer with </h4></td></tr>
-<tr><td ><code>form_occupation</code> <span style="color:red">*</span> </td><td>Patient Occupation   </td><td> <code>alphanumeric</code></td></tr>
-<tr><td ><code>form_em_name</code> <span style="color:red">*</span> </td><td>Patient Employer Name  </td><td><code>string</code></td></tr>
-<tr><td ><code>form_em_street</code> <span style="color:red">*</span> </td><td>Patient Employer Address   </td><td> <code>string</code></td></tr>
+<tr><td ><code>form_occupation</code> <span style="color:red">*</span> </td><td colspan=2>Patient Occupation   </td><td> <code>alphanumeric</code></td></tr>
+<tr><td ><code>form_em_name</code> <span style="color:red">*</span> </td><td colspan=2>Patient Employer Name  </td><td><code>string</code></td></tr>
+<tr><td ><code>form_em_street</code> <span style="color:red">*</span> </td><td colspan=2>Patient Employer Address   </td><td> <code>string</code></td></tr>
 <tr><td colspan="3">&nbsp;<h4>Risk</h4> </td></tr>
-<tr><td ><code>form_usertext11</code></td><td>Risk Factors  </td><td><code>array of risk factors</code></td></tr>
-<tr><td ><code>form_userarea11</code></td><td>Risk Factors Others  </td><td><code>array</code></td></tr>
-<tr><td ><code>form_exams</code></td><td>Exams/Tests  </td><td> <code>array contain  Exams/Tests  name  and result </code></td></tr>
-<tr><td ><code>radio_exams</code></td><td>Exams/Tests options  </td><td><code>array contain  Exams/Tests options  </code></td></tr>
+<tr><td ><code>form_usertext11</code></td><td colspan=2>Risk Factors  </td><td><code>array of risk factors</code></td></tr>
+<tr><td ><code>form_userarea11</code></td><td colspan=2>Risk Factors Others  </td><td><code>array</code></td></tr>
+<tr><td ><code>form_exams</code></td><td colspan=2>Exams/Tests  </td><td> <code>array contain  Exams/Tests  name  and result </code></td></tr>
+<tr><td ><code>radio_exams</code></td><td colspan=2>Exams/Tests options  </td><td><code>array contain  Exams/Tests options  </code></td></tr>
 <tr><td colspan="3">&nbsp;<h4>Life style</h4></td></tr>
-<tr><td ><code>form_text_tobacco</code></td><td>Tobacco Type   </td><td> <code>string</code></td></tr>
-<tr><td ><code>form_tobacco</code></td><td>Tobacco   </td><td> <code>array contain  frequency of usage and status if quit on date.</code></td></tr>
-<tr><td ><code>form_coffee</code></td><td>Coffee   </td><td> <code>array contain status if quit on date.</code></td></tr>
-<tr><td ><code>form_alcohol</code></td><td>Alcohol   </td><td><code>array contain status if quit on date.</code></td></tr>
-<tr><td ><code>form_recreational_drugs</code></td><td>Recreational Drugs   </td><td><code>array contain status if quit on date.</code></td></tr>
-<tr><td ><code>form_counseling</code></td><td>Counselling   </td><td> <code>array contain status if quit on date.</code></td></tr>
-<tr><td ><code>form_exercise_patterns</code></td><td>Exercise Patterns  </td><td> <code>array contain status if quit on date.</code></td></tr>
-<tr><td ><code>form_hazardous_activities</code></td><td>Hazardous Activities  </td><td> <code>array contain status if quit on date.</code></td></tr>
-<tr><td ><code>form_userarea12</code></td><td>Life style Others  </td><td><code>string</code></td></tr>
+<tr><td ><code>form_text_tobacco</code></td><td colspan=2>Tobacco Type   </td><td> <code>string</code></td></tr>
+<tr><td ><code>form_tobacco</code></td><td colspan=2>Tobacco   </td><td> <code>array contain  frequency of usage and status if quit on date.</code></td></tr>
+<tr><td ><code>form_coffee</code></td><td colspan=2>Coffee   </td><td> <code>array contain status if quit on date.</code></td></tr>
+<tr><td ><code>form_alcohol</code></td><td colspan=2>Alcohol   </td><td><code>array contain status if quit on date.</code></td></tr>
+<tr><td ><code>form_recreational_drugs</code></td><td colspan=2>Recreational Drugs   </td><td><code>array contain status if quit on date.</code></td></tr>
+<tr><td ><code>form_counseling</code></td><td colspan=2>Counselling   </td><td> <code>array contain status if quit on date.</code></td></tr>
+<tr><td ><code>form_exercise_patterns</code></td><td colspan=2>Exercise Patterns  </td><td> <code>array contain status if quit on date.</code></td></tr>
+<tr><td ><code>form_hazardous_activities</code></td><td colspan=2>Hazardous Activities  </td><td> <code>array contain status if quit on date.</code></td></tr>
+<tr><td ><code>form_userarea12</code></td><td colspan=2>Life style Others  </td><td><code>string</code></td></tr>
 <tr><td colspan="3">&nbsp; <h4>Relatives </h4></td></tr>
-<tr><td ><code>form_relatives_cancer</code></td><td>Cancer   </td><td><code>string</code></td></tr>
-<tr><td ><code>form_relatives_tuberculosis</code></td><td>Tuberculosis  </td><td> <code>string</code></td></tr>
-<tr><td ><code>form_relatives_diabetes</code></td><td>Diabetes   </td><td> <code>string</code></td></tr>
-<tr><td ><code>form_relatives_heart_problems</code></td><td>High Blood Pressure  </td><td><code>string</code></td></tr>
-<tr><td ><code>form_relatives_stroke</code></td><td>Stroke   </td><td> <code>string</code></td></tr>
-<tr><td ><code>form_relatives_epilepsy</code></td><td>Epilepsy  </td><td><code>string</code></td></tr>
-<tr><td ><code>form_relatives_mental_illness</code></td><td>Mental Illness  </td><td> <code>string</code></td></tr>
-<tr><td ><code>form_relatives_suicide</code></td><td>Suicide   </td><td> <code>string</code></td></tr>
+<tr><td ><code>form_relatives_cancer</code></td><td colspan=2>Cancer   </td><td><code>string</code></td></tr>
+<tr><td ><code>form_relatives_tuberculosis</code></td><td colspan=2>Tuberculosis  </td><td> <code>string</code></td></tr>
+<tr><td ><code>form_relatives_diabetes</code></td><td colspan=2>Diabetes   </td><td> <code>string</code></td></tr>
+<tr><td ><code>form_relatives_heart_problems</code></td><td colspan=2>High Blood Pressure  </td><td><code>string</code></td></tr>
+<tr><td ><code>form_relatives_stroke</code></td><td colspan=2>Stroke   </td><td> <code>string</code></td></tr>
+<tr><td ><code>form_relatives_epilepsy</code></td><td colspan=2>Epilepsy  </td><td><code>string</code></td></tr>
+<tr><td ><code>form_relatives_mental_illness</code></td><td colspan=2>Mental Illness  </td><td> <code>string</code></td></tr>
+<tr><td ><code>form_relatives_suicide</code></td><td colspan=2>Suicide   </td><td> <code>string</code></td></tr>
 <tr><td colspan="3">&nbsp; <h4>Biological History</h4> </td></tr>
-<tr><td ><code>form_history_father</code></td><td>Father's Name   </td><td> <code>string</code></td></tr>
-<tr><td ><code>form_history_mother</code></td><td>Mother's Name  </td><td> <code>string</code></td></tr>
-<tr><td ><code>form_history_siblings</code></td><td>Siblings   </td><td> <code>string</code></td></tr>
-<tr><td ><code>form_history_spouse</code></td><td>Spouse   </td><td> <code>string</code></td></tr>
-<tr><td ><code>form_history_offspring</code></td><td>Child   </td><td> <code>string</code></td></tr>
+<tr><td ><code>form_history_father</code></td><td colspan=2>Father's Name   </td><td> <code>string</code></td></tr>
+<tr><td ><code>form_history_mother</code></td><td colspan=2>Mother's Name  </td><td> <code>string</code></td></tr>
+<tr><td ><code>form_history_siblings</code></td><td colspan=2>Siblings   </td><td> <code>string</code></td></tr>
+<tr><td ><code>form_history_spouse</code></td><td colspan=2>Spouse   </td><td> <code>string</code></td></tr>
+<tr><td ><code>form_history_offspring</code></td><td colspan=2>Child   </td><td> <code>string</code></td></tr>
 </tbody></table>
 
 ### New Patient Register ON POST [POST]
