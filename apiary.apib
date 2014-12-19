@@ -50,9 +50,7 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 <li><p><code>4xx </code>  <code>Client Error </code>- the request could not be understood by server or client was missing required parameters. </p></li>
 <li><p><code>400 </code>  <code>Bad Request </code>- the request could not be understood or was missing required parameters. </p></li>
 <li><p><code>401 </code>  <code>Unauthorized </code>- authentication failed or user doesn't have permissions for requested operation. </p></li>
-Status Code: 412 - Precondition Failed 
-
-The server does not meet one of the preconditions that the requester put on the request.
+<li><p><code>412 </code>  <code> Precondition Failed</code>-The server does not meet one of the preconditions that the requester put on the request.</p></li>
 <li><p><code>403 </code>  <code>Forbidden </code>-  access denied, currently authorized user doesn't have access to the resource. </p></li>
 <li><p><code>404 </code>  <code>Not Found </code>-  resource was not found. </p></li>
 <li><p><code>405 </code>  <code>Method Not Allowed </code>-  requested method is not supported for resource. </p></li>
@@ -274,7 +272,7 @@ The server does not meet one of the preconditions that the requester put on the 
 
 <p>Data Collection Attributes:</p>
 <table style="width: 100%; margin: 12px 0 0 0;">
-<thead><tr><th> Attributes </th><th > Description </th><th>data type </th></tr></thead>
+<thead><tr><th> Attributes </th><th colspan=2> Description </th><th>data type </th></tr></thead>
 <tbody>
 <tr><td ><code>form_pubpid</code> <span style="color:red">*</span> </td><td colspan=2>Biometric ( Finger print) Unique value or system will generate unique value.</td><td> <code>alphanumeric</code></td></tr>
 <tr><td ><code>form_fname</code> <span style="color:red">*</span> </td><td colspan=2>Patient first name </td><td><code>alpha</code></td></tr>
