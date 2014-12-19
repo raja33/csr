@@ -43,13 +43,16 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 <p>All responses from the API use a standard HTTP status code. Common status codes you will see while using the API are:</p>
 <ul>
 <li><p><code>2xx </code>  <code>Successful</code>- the request was successful and a resource was created</p></li>
-<li><p><code>200 </code>  <code>OK </code>- the request completed successfully (POST calls return 201 instead)</p></li>
+<li><p><code>200 </code>  <code>OK </code>- the request completed successfully (POST calls return 201 instead)</p><br/><p><strong>Status Code: 200 - OK</strong><br/> Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action.</p></li>
 <li><p><code>201 </code>  <code>Created </code>- the request was successful and a resource was created</p></li>
 <li><p><code>3xx </code>  <code>Redirection </code>- Server redirect if it's need. </p></li>
 <li><p><code>301 </code>  <code>Moved Permanently</code>- Server redirect if it's need. </p></li>
 <li><p><code>4xx </code>  <code>Client Error </code>- the request could not be understood by server or client was missing required parameters. </p></li>
 <li><p><code>400 </code>  <code>Bad Request </code>- the request could not be understood or was missing required parameters. </p></li>
 <li><p><code>401 </code>  <code>Unauthorized </code>- authentication failed or user doesn't have permissions for requested operation. </p></li>
+Status Code: 412 - Precondition Failed 
+
+The server does not meet one of the preconditions that the requester put on the request.
 <li><p><code>403 </code>  <code>Forbidden </code>-  access denied, currently authorized user doesn't have access to the resource. </p></li>
 <li><p><code>404 </code>  <code>Not Found </code>-  resource was not found. </p></li>
 <li><p><code>405 </code>  <code>Method Not Allowed </code>-  requested method is not supported for resource. </p></li>
@@ -71,7 +74,6 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 
 ## Query Parameters
 
-
 <p>You can add query parameters to your requests, most commonly for <code>GET</code> requests.</p>
 <p><em>Example: http://www.sitename/com/api/v1/plist?page=2&amp;pageSize=10 will return page 2, of 10 results per page.</em></p>
 
@@ -84,8 +86,8 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 <table style="width: 100%; margin: 12px 0 0 0;">
 <tbody>
 <tr><td colspan="2"><strong>After Successful Login Request Required Header Parameters</strong></td></tr>
-<tr><td >auth</td><td><code>xxxxx</code></td></tr>
-<tr><td >auth_key</td><td><code>xxxxx</code></td></tr>
+<tr><td ><code>auth</code></td><td><code>xxxxx</code></td></tr>
+<tr><td ><code>auth_key</code></td><td><code>xxxxx</code></td></tr>
 </tbody>
 </table>
 
@@ -99,17 +101,17 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 <p>User login attributes:</p>
 
 <ul >
-<li ><p><strong>Request attributes</strong></p></li>
-<li ><p class="tocColumnItemText"><strong>authUser</strong> <code>string</code> - unique name of the User in the system</p></li>
-<li ><p class="tocColumnItemText"><strong>authPass</strong> <code>string</code> - base64_encode of password used in this filed for crypt.</p></li>
-<li ><p><strong>Response attributes</strong></p></li>
-<li ><p class="tocColumnItemText"><strong>StatusCode</strong> <code>mixed</code> - Server return header message based on credential.</p></li>
-<li ><p class="tocColumnItemText"><strong>Message</strong> <code>string</code> - Server return message based on credential.</p></li>
-<li ><p class="tocColumnItemText"><strong>authUser</strong> <code>string</code> - Authenticated unique name of the User in the system.</p></li>
-<li ><p class="tocColumnItemText"><strong>Username</strong> <code>string</code> - Authenticated Name of the User in the system.</p></li>
-<li ><p class="tocColumnItemText"><strong>Facility</strong> <code>string</code> - Facility of the current User.</p></li>
-<li ><p class="tocColumnItemText"><strong>authUserID</strong> <code>string</code> - Unique UUID for the current User.</p></li>
-<li ><p class="tocColumnItemText"><strong>setControllerlevels</strong> <code>array of object</code> - Current User having Generic Access Control Lists.</p></li>
+<li ><p><strong>Request attributes</p></li>
+<li ><p class="tocColumnItemText"><code><strong>authUser</strong></code> <code>string</code> - unique name of the User in the system</p></li>
+<li ><p class="tocColumnItemText"><code><strong>authPass</strong></code> <code>string</code> - base64_encode of password used in this filed for crypt.</p></li>
+<li ><p><strong>Response attributes</p></li>
+<li ><p class="tocColumnItemText"><code><strong>StatusCode</strong></code> <code>mixed</code> - Server return header message based on credential.</p></li>
+<li ><p class="tocColumnItemText"><code><strong>Message</strong></code> <code>string</code> - Server return message based on credential.</p></li>
+<li ><p class="tocColumnItemText"><code><strong>authUser</strong></code> <code>string</code> - Authenticated unique name of the User in the system.</p></li>
+<li ><p class="tocColumnItemText"><code><strong>Username</strong></code> <code>string</code> - Authenticated Name of the User in the system.</p></li>
+<li ><p class="tocColumnItemText"><code><strong>Facility</strong></code> <code>string</code> - Facility of the current User.</p></li>
+<li ><p class="tocColumnItemText"><code><strong>authUserID</strong></code> <code>string</code> - Unique UUID for the current User.</p></li>
+<li ><p class="tocColumnItemText"><code><strong>setControllerlevels</strong></code> <code>array of object</code> - Current User having Generic Access Control Lists.</p></li>
 </ul>
 
 
@@ -120,7 +122,7 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 <span>Resource URI : /user/:login</span>
 <span>Request Content type :application/json</span>
 <span>Request Query:authUser=admin&authPass=YWRtaW5sc2FwcEAyMDE0</span>
-<span>For example<br/>Request URL: https://yourdomain.com/user/:login?authUser=admin&authPass=YWRtaW5sc2FwcEAyMDE0</span></code>
+<span>For example<br/>Request URL: https://yourdomain.com/User/:login?authUser=admin&authPass=YWRtaW5sc2FwcEAyMDE0</span></code>
 </pre>
 
 ### User Login on GET method [GET]
@@ -129,8 +131,7 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 
     + Body
     
-            {"StatusCode":200,"Message":"Login Successful!","authUser":"raj","Username":"Rajesh Testing","Facility":"Malar Hospital","authUserID":"E1BF1EF6-208B-9AAF-4A21-4AAA4E3D7B76","setControllerlevels":[{"ControllerName":"Clinicians"},{"ControllerName":"Front Office"},{"ControllerName":"Paramedical"},{"ControllerName":"Pharmacy"}]}
-            
+                {"StatusCode":200,"Message":"Login Successful!","authUser":"raj","Username":"Rajesh Testing","Facility":"Malar Hospital","authUserID":"E1BF1EF6-208B-9AAF-4A21-4AAA4E3D7B76","setControllerlevels":[{"ControllerName":"Clinicians"},{"ControllerName":"Front Office"},{"ControllerName":"Paramedical"},{"ControllerName":"Pharmacy"}]}
         
 + Parameters
     + login (required , `login?` , `string`) ... this is used as a key.
@@ -162,18 +163,18 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
     + Body
 
             {"StatusCode":200,"Message":"Login Successful!","authUser":"raj","Username":"Rajesh Testing","Facility":"Malar Hospital","authUserID":"E1BF1EF6-208B-9AAF-4A21-4AAA4E3D7B76","setControllerlevels":[{"ControllerName":"Clinicians"},{"ControllerName":"Front Office"},{"ControllerName":"Paramedical"},{"ControllerName":"Pharmacy"}]}
-            
+
 
 + Request (application/x-www-form-urlencoded)
 
         authUser=admin&authPass=YWRtaW5sc2FwcEAyMDE0
 
-+ Response 200 (application/json)
++ Response 201 (application/json)
     
     + Body
 
             {"StatusCode":200,"Message":"Login Successful!","authUser":"raj","Username":"Rajesh Testing","Facility":"Malar Hospital","authUserID":"E1BF1EF6-208B-9AAF-4A21-4AAA4E3D7B76","setControllerlevels":[{"ControllerName":"Clinicians"},{"ControllerName":"Front Office"},{"ControllerName":"Paramedical"},{"ControllerName":"Pharmacy"}]}
-            
+
 ## User Logout on POST [/user/logout]
 
 <pre class="json">
@@ -185,15 +186,15 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 <p>User Logout attributes:</p>
 
 <ul>
-<li><p class="tocColumnItemText"><strong>auth_key</strong> <code>string</code> - unique UUID of the User in the system , it is to be passed on Headers</p></li>
-<li><p class="tocColumnItemText"><strong>auth</strong> <code>string</code> - authenticate user stay on login to request and retrieve data from server  or logout, it is to be passed on Headers</p></li>
+<li><p class="tocColumnItemText"></code><strong>auth_key</strong></code> <code>string</code> - unique UUID of the User in the system , it is to be passed on Headers</p></li>
+<li><p class="tocColumnItemText"></code><strong>auth</strong></code> <code>string</code> - authenticate user stay on login to request and retrieve data from server  or logout, it is to be passed on Headers</p></li>
 </ul>
 
 <table style="width: 100%; margin: 12px 0 0 0;">
 <tbody>
 <tr><td colspan="2"><strong>Required Header Parameters</strong></td></tr>
-<tr><td >auth</td><td><code>logout</code></td></tr>
-<tr><td >auth_key</td><td><code>91B0B365-7BF7-4724-FEC3-4848E07312B5</code></td></tr>
+<tr><td ></code>auth</code></td><td><code>logout</code></td></tr>
+<tr><td ></code>auth_key</code></td><td><code>91B0B365-7BF7-4724-FEC3-4848E07312B5</code></td></tr>
 </tbody>
 </table>
 
@@ -210,27 +211,29 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
     
     + Body
 
-            {"StatusCode":200,"Message":"Logout Successful."}
+            {success: {Message: "Logout Successful."}}
 
 # Group Patient Data collection
 
 <p>Common attributes:</p>
 <ul>
-<li><p class="tocColumnItemText"><strong>AUTH_KEY</strong> <code>string</code> - unique UUID of the User in the system , it is to be passed on Headers</p></li>
-<li><p class="tocColumnItemText"><strong>auth</strong> <code>string</code> - authenticate user stay on login to request and retrieve data from server  or logout, it is to be passed on Headers</p></li>
-<li><p class="tocColumnItemText"><strong>StatusCode</strong> <code>200</code> - Client request with REQUEST_METHOD , URL pattern and Parameters to the server, Server response as an success result .</p></li>
-<li><p class="tocColumnItemText"><strong>StatusCode</strong> <code>400, 401</code> -  Client request with invalid REQUEST_METHOD or invalid URL pattern or invalid Parameters to the server, Server response as an failure result .</p></li>
+<li><p class="tocColumnItemText"><code><strong>auth_key</strong></code> <code>string</code> - unique UUID of the User in the system , it is to be passed on Headers</p></li>
+<li><p class="tocColumnItemText"><code><strong>auth</strong></code> <code>string</code> - authenticate user stay on login to request and retrieve data from server  or logout, it is to be passed on Headers</p></li>
+<li><p class="tocColumnItemText"><code><strong>success</strong></code> <code>object</code> - Client request with REQUEST_METHOD , URL pattern and Parameters to the server, Server response as an success object .</p></li>
+<li><p class="tocColumnItemText"><code><strong>failure</strong></code> <code>object</code> -  Client request with invalid REQUEST_METHOD or invalid URL pattern or invalid Parameters to the server, Server response as an failure object .</p></li>
 </ul>
 
 <table style="width: 100%; margin: 12px 0 0 0;">
 <tbody>
 <tr><td colspan="2"><strong>Required Header Parameters</strong></td></tr>
-<tr><td >auth</td><td><code>login</code></td></tr>
-<tr><td >auth_key</td><td><code>UUID</code></td></tr>
+<tr><td ><code>auth</code></td><td><code>login</code></td></tr>
+<tr><td ><code>auth_key</code></td><td><code>UUID</code></td></tr>
 </tbody>
 </table>
 
 ## Patient Register Form [/demographics/form]
+
+
 
 <pre class="json">
 <code><span> Request method : POST<span>
@@ -250,10 +253,9 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 + Response 200 (application/json)
     
     + Body
-    
+
                 {"StatusCode":200,"form_pubpid":{"label":"Biometric","required":1},"form_fname":{"label":"First Name","required":1},"form_lname":{"label":"Last name","required":1},"form_DOB":{"label":"Date of birth","required":1},"form_age":{"label":"Age","required":1},"form_sex":{"label":"sex","options":{"Unassigned":"Unassigned","Female":"Female","Male":"Male"},"required":1},"form_status":{"label":"Status","options":{"Unassigned":"Unassigned","married":"Married","single":"Single","divorced":"Divorced","widowed":"Widowed","separated":"Separated","domestic partner":"Domestic Partner"},"required":1},"form_photo":{"label":"Photograph","required":1},"form_genericname1":{"label":"Blood Group","options":{"Unassigned":"Unassigned","O+":"O+","A+":"A+","B+":"B+","AB+":"AB+","O-":"O-","A-":"A-","B-":"B-","AB-":"AB-"},"required":0},"form_street":{"label":"Door no, Street name","required":0},"form_genericval2":{"label":"Village","required":0},"form_genericval1":{"label":"Taluk","required":0},"form_city":{"label":"City","required":0},"form_genericname2":{"label":"District","required":1},"form_state":{"label":"State","options":{"Unassigned":"Unassigned","AN":"Andaman and Nicobar Islands","AP":"Andhra Pradesh","AR":"Arunachal Pradesh","AS":"Assam","BI":"Bihar","CH":"Chandigarh","DA":"Dadra and Nagar Haveli","DM":"Daman and Diu","DE":"Delhi","GO":"Goa","GU":"Gujarat","HA":"Haryana","HP":"Himachal Pradesh","JA":"Jammu and Kashmir","KA":"Karnataka","KE":"Kerala","LI":"Lakshadweep Islands","MP":"Madhya Pradesh","MA":"Maharashtra","MN":"Manipur","ME":"Meghalaya","MI":"Mizoram","NA":"Nagaland","OR":"Orissa","PO":"Pondicherry","PU":"Punjab","RA":"Rajasthan","SI":"Sikkim","TN":"Tamil Nadu","TR":"Tripura","UP":"Uttar Pradesh","WB":"West Bengal"},"required":1},"form_postal_code":{"label":"Pin code","required":1},"form_phone_cell":{"label":"Mobile Number","required":0},"form_phone_home":{"label":"Land line","required":0},"form_email":{"label":"Contact Email","required":0},"form_guardiansname":{"label":"Emergency Contact Name","required":0},"form_contact_relationship":{"label":"Emergency Contact RelationShip","required":0},"form_phone_contact":{"label":"Emergency Contact Phone","required":0},"form_occupation":{"label":"Occupation","required":1},"form_em_name":{"label":"Employer Name","required":1},"form_em_street":{"label":"Employer Address","required":1},"form_usertext11":{"label":"Risk Factors","checkbox":{"form_usertext11[vv]":"Varicose Veins","form_usertext11[ht]":"Hypertension","form_usertext11[db]":"Diabetes","form_usertext11[sc]":"Sickle Cell","form_usertext11[fib]":"Fibroids","form_usertext11[pid]":"PID (Pelvic Inflammatory Disease)","form_usertext11[mig]":"Severe Migraine","form_usertext11[hd]":"Heart Disease","form_usertext11[str]":"Thrombosis\/Stroke","form_usertext11[hep]":"Hepatitis","form_usertext11[gb]":"Gall Bladder Condition","form_usertext11[br]":"Breast Disease","form_usertext11[dpr]":"Depression","form_usertext11[all]":"Allergies","form_usertext11[inf]":"Infertility","form_usertext11[ast]":"Asthma","form_usertext11[ep]":"Epilepsy","form_usertext11[cl]":"Contact Lenses","form_usertext11[coc]":"Contraceptive Complication (specify)","form_usertext11[oth]":"Other (specify)"},"required":0},"form_userarea11":{"label":"Risk Factors Others","required":0},"form_exams":{"labels":{"form_exams[brs]":{"label":"Breast Exam","radio":{"radio_exams[brs][1]":"N\/A","radio_exams[brs][2]":"Normal","radio_exams[brs][3]":"Abnormal"}},"form_exams[cec]":{"label":"Cardiac Echo","radio":{"radio_exams[cec][1]":"N\/A","radio_exams[cec][2]":"Normal","radio_exams[cec][3]":"Abnormal"}},"form_exams[ecg]":{"label":"ECG","radio":{"radio_exams[ecg][1]":"N\/A","radio_exams[ecg][2]":"Normal","radio_exams[ecg][3]":"Abnormal"}},"form_exams[gyn]":{"label":"Gynecological Exam","radio":{"radio_exams[gyn][1]":"N\/A","radio_exams[gyn][2]":"Normal","radio_exams[gyn][3]":"Abnormal"}},"form_exams[mam]":{"label":"Mammogram","radio":{"radio_exams[mam][1]":"N\/A","radio_exams[mam][2]":"Normal","radio_exams[mam][3]":"Abnormal"}},"form_exams[phy]":{"label":"Physical Exam","radio":{"radio_exams[phy][1]":"N\/A","radio_exams[phy][2]":"Normal","radio_exams[phy][3]":"Abnormal"}},"form_exams[pro]":{"label":"Prostate Exam","radio":{"radio_exams[pro][1]":"N\/A","radio_exams[pro][2]":"Normal","radio_exams[pro][3]":"Abnormal"}},"form_exams[rec]":{"label":"Rectal Exam","radio":{"radio_exams[rec][1]":"N\/A","radio_exams[rec][2]":"Normal","radio_exams[rec][3]":"Abnormal"}},"form_exams[sic]":{"label":"Sigmoid\/Colonoscopy","radio":{"radio_exams[sic][1]":"N\/A","radio_exams[sic][2]":"Normal","radio_exams[sic][3]":"Abnormal"}},"form_exams[ret]":{"label":"Retinal Exam","radio":{"radio_exams[ret][1]":"N\/A","radio_exams[ret][2]":"Normal","radio_exams[ret][3]":"Abnormal"}},"form_exams[flu]":{"label":"Flu Vaccination","radio":{"radio_exams[flu][1]":"N\/A","radio_exams[flu][2]":"Normal","radio_exams[flu][3]":"Abnormal"}},"form_exams[pne]":{"label":"Pneumonia Vaccination","radio":{"radio_exams[pne][1]":"N\/A","radio_exams[pne][2]":"Normal","radio_exams[pne][3]":"Abnormal"}},"form_exams[ldl]":{"label":"LDL","radio":{"radio_exams[ldl][1]":"N\/A","radio_exams[ldl][2]":"Normal","radio_exams[ldl][3]":"Abnormal"}},"form_exams[hem]":{"label":"Hemoglobin","radio":{"radio_exams[hem][1]":"N\/A","radio_exams[hem][2]":"Normal","radio_exams[hem][3]":"Abnormal"}},"form_exams[psa]":{"label":"PSA","radio":{"radio_exams[psa][1]":"N\/A","radio_exams[psa][2]":"Normal","radio_exams[psa][3]":"Abnormal"}}},"label":"Exams\/Tests","required":0},"form_text_tobacco":{"label":"Tobacco Type","required":0},"form_tobacco":{"label":"Tobacco","options":{"Unassigned":"Unassigned","1":"Current every day smoker","2":"Current some day smoker","3":"Former smoker","4":"Never smoker","5":"Smoker, current status unknown","9":"Unknown if ever smoked","15":"Heavy tobacco smoker","16":"Light tobacco smoker"},"radio":{"radio_tobacco[current]":"Current","radio_tobacco[quit]":"Quit","radio_tobacco[never]":"Never","radio_tobacco[not_applicable]":"N\/A"},"date_tobacco":"choose a date","required":0},"form_coffee":{"label":"Coffee","radio":{"radio_coffee[current]":"Current","radio_coffee[quit]":"Quit","radio_coffee[never]":"Never","radio_coffee[not_applicable]":"N\/A"},"date_coffee":"choose a date","required":0},"form_alcohol":{"label":"Alcohol","radio":{"radio_alcohol[current]":"Current","radio_alcohol[quit]":"Quit","radio_alcohol[never]":"Never","radio_alcohol[not_applicable]":"N\/A"},"date_alcohol":"choose a date","required":0},"form_recreational_drugs":{"label":"Recreational Drugs","radio":{"radio_recreational_drugs[current]":"Current","radio_recreational_drugs[quit]":"Quit","radio_recreational_drugs[never]":"Never","radio_recreational_drugs[not_applicable]":"N\/A"},"date_recreational_drugs":"choose a date","required":0},"form_counseling":{"label":"Counselling","radio":{"radio_counseling[current]":"Current","radio_counseling[quit]":"Quit","radio_counseling[never]":"Never","radio_counseling[not_applicable]":"N\/A"},"date_counseling":"choose a date","required":0},"form_exercise_patterns":{"label":"Exercise Patterns","radio":{"radio_exercise_patterns[current]":"Current","radio_exercise_patterns[quit]":"Quit","radio_exercise_patterns[never]":"Never","radio_exercise_patterns[not_applicable]":"N\/A"},"date_exercise_patterns":"choose a date","required":0},"form_hazardous_activities":{"label":"Hazardous Activities","radio":{"radio_hazardous_activities[current]":"Current","radio_hazardous_activities[quit]":"Quit","radio_hazardous_activities[never]":"Never","radio_hazardous_activities[not_applicable]":"N\/A"},"date_hazardous_activities":"choose a date","required":0},"form_userarea12":{"label":"Life style Others","required":0},"form_relatives_cancer":{"label":"Cancer","required":0},"form_relatives_tuberculosis":{"label":"Tuberculosis","required":0},"form_relatives_diabetes":{"label":"Diabetes","required":0},"form_relatives_high_blood_pressure":{"label":"High Blood Pressure","required":0},"form_relatives_heart_problems":{"label":"Heart Problems","required":0},"form_relatives_stroke":{"label":"Stroke","required":0},"form_relatives_epilepsy":{"label":"Epilepsy","required":0},"form_relatives_mental_illness":{"label":"Mental Illness","required":0},"form_relatives_suicide":{"label":"Suicide","required":0},"form_history_father":{"label":"Father `s Name","required":0},"form_history_mother":{"label":"Mothers `s Name","required":0},"form_history_siblings":{"label":"Siblings","required":0},"form_history_spouse":{"label":"Spouse","required":0},"form_history_offspring":{"label":"Child","required":0}}
-
-
+    
 ##  New Patient Register [/demographics/new]
 
 <pre class="json">
@@ -265,75 +267,75 @@ HOST: https://tmx-india.cloudapp.net/openemr_dev/interface/tmx-india
 <table style="width: 100%; margin: 12px 0 0 0;">
 <tbody>
 <tr><td colspan="2"><strong>Required Header Parameters</strong></td></tr>
-<tr><td >auth</td><td><code>login</code></td></tr>
-<tr><td >auth_key</td><td><code>91B0B365-7BF7-4724-FEC3-4848E07312B5</code></td></tr>
+<tr><td ><code>auth</code></td><td><code>login</code></td></tr>
+<tr><td ><code>auth_key</code></td><td><code>91B0B365-7BF7-4724-FEC3-4848E07312B5</code></td></tr>
 </tbody>
 </table>
 
-<p>Data collection attributes:</p>
+<p>Data Collection Attributes:</p>
 <table style="width: 100%; margin: 12px 0 0 0;">
 <tbody>
-<tr><th> Parameter </th><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Description &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th> Recommented </th><th>data type </th></tr>
-<tr><td >form_pubpid</td><td>Biometric ( Finger print) Unique value or system will generate unique value.</td><td><code>required</code></td><td> <code>alphanumeric</code></td></tr>
-<tr><td >form_fname</td><td>Patient first name </td><td><code>required</code> </td><td><code>alpha</code></td></tr>
-<tr><td >form_lname</td><td>Patient last name  </td><td> <code>required</code> </td><td><code>alpha</code></td></tr>
-<tr><td >form_DOB/form_age </td><td>Patient date of birth or age   </td><td><code>required</code> </td><td><code> Supported input date formats are:
+<tr><th> Attributes </th><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Description &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th>data type </th></tr>
+<tr><td ><code>form_pubpid</code> <span style="color:red">*</span> </td><td>Biometric ( Finger print) Unique value or system will generate unique value.</td><td> <code>alphanumeric</code></td></tr>
+<tr><td ><code>form_fname</code> <span style="color:red">*</span> </td><td>Patient first name </td><td><code>alpha</code></td></tr>
+<tr><td ><code>form_lname</code> <span style="color:red">*</span> </td><td>Patient last name  </td><td><code>alpha</code></td></tr>
+<tr><td ><code>form_DOB/form_age</code>  <span style="color:red">*</span> </td><td>Patient date of birth or age   </td><td><code> Supported input date formats are:
 mm/dd/yyyy ,   mm/dd/yy   (assumes 20yy for yy < 10, else 19yy)
 yyyy/mm/dd ,  also mm-dd-yyyy, and mm.dd.yyyy, Age is an 3 digit Numeric Value.</code></td></tr>
-<tr><td >form_sex</td><td>Patient sex info   </td><td><code>required</code> </td><td><code>option</code></td></tr>
-<tr><td >form_status</td><td>Patient marital status   </td><td><code>required</code> </td><td><code>option</code></td></tr>
-<tr><td >form_photo </td><td>Patient Photograph   </td><td><code>required</code> </td><td><code>base64_encode file format</code></td></tr>
-<tr><td >form_genericname1</td><td>Patient Blood Group  </td><td><code>optional</code> </td><td><code>option</code></td></tr>
-<tr><td colspan="4">&nbsp;<h4>Address</h4></td></tr>
-<tr><td >form_street</td><td>Patient Address Door no, Street name  </td><td><code>optional</code> </td><td><code>string</code></td></tr>
-<tr><td >form_genericval2</td><td>Patient Address Village  </td><td> <code>optional</code> </td><td><code>string</code></td></tr>
-<tr><td >form_genericval1</td><td>Patient Address Taluk   </td><td><code>optional</code> </td><td><code>string</code></td></tr>
-<tr><td >form_city</td><td>Patient Address  City </td><td><code>optional</code> </td><td><code>string</code></td></tr>
-<tr><td >form_genericname2</td><td>Patient Address  District </td><td><code>required</code> </td><td><code>string</code></td></tr>
-<tr><td >form_state</td><td>Patient Address  State </td><td><code>required</code> </td><td><code>option</code></td></tr>
-<tr><td >form_postal_code</td><td>Patient Address Pin code  </td><td> <code>required</code> </td><td><code>numeric</code></td></tr>
-<tr><td colspan="4">&nbsp;<h4>Contact</h4></td></tr>
-<tr><td >form_phone_cell</td><td>Patient Mobile Number  </td><td> <code>optional</code> </td><td></td><td><code>numeric</code></td></tr>
-<tr><td >form_phone_home</td><td>Patient Land line   </td><td><code>optional</code> </td><td><code>numeric</code></td></tr>
-<tr><td >form_email</td><td>Patient Contact Email   </td><td><code>optional</code> </td><td><code>email address format</code></td></tr>
-<tr><td colspan="4">&nbsp;<h4>Emergency</h4></td></tr>
-<tr><td >form_guardiansname</td><td>Patient Emergency Contact Name  </td><td> <code>optional</code> </td><td><code>numeric</code></td></tr>
-<tr><td >form_contact_relationship</td><td>Patient Emergency Contact RelationShip   </td><td><code>optional</code> </td><td><code>string</code></td></tr>
-<tr><td >form_phone_contact</td><td>Patient Emergency Contact Phone   </td><td><code>optional</code> </td><td><code>numeric</code></td></tr>
-<tr><td colspan="4">&nbsp;<h4>Employer with </h4></td></tr>
-<tr><td >form_occupation</td><td>Patient Occupation   </td><td><code>required</code></td><td> <code>alphanumeric</code></td></tr>
-<tr><td >form_em_name</td><td>Patient Employer Name  </td><td> <code>required</code> </td><td><code>string</code></td></tr>
-<tr><td >form_em_street</td><td>Patient Employer Address   </td><td><code>required</code></td><td> <code>string</code></td></tr>
-<tr><td colspan="4">&nbsp;<h4>Risk</h4> </td></tr>
-<tr><td >form_usertext11</td><td>Risk Factors  </td><td> <code>optional</code> </td><td><code>array of risk factors</code></td></tr>
-<tr><td >form_userarea11</td><td>Risk Factors Others  </td><td> <code>optional</code> </td><td><code>array</code></td></tr>
-<tr><td >form_exams</td><td>Exams/Tests  </td><td> <code>optional</code></td><td> <code>array contain  Exams/Tests  name  and result </code></td></tr>
-<tr><td >radio_exams</td><td>Exams/Tests options  </td><td><code>optional</code> </td><td><code>array contain  Exams/Tests options  </code></td></tr>
-<tr><td colspan="4">&nbsp;<h4>Life style</h4></td></tr>
-<tr><td >form_text_tobacco</td><td>Tobacco Type   </td><td><code>optional</code></td><td> <code>string</code></td></tr>
-<tr><td >form_tobacco</td><td>Tobacco   </td><td><code>optional</code></td><td> <code>array contain  frequency of usage and status if quit on date.</code></td></tr>
-<tr><td >form_coffee</td><td>Coffee   </td><td><code>optional</code></td><td> <code>array contain status if quit on date.</code></td></tr>
-<tr><td >form_alcohol</td><td>Alcohol   </td><td><code>optional</code> </td><td><code>array contain status if quit on date.</code></td></tr>
-<tr><td >form_recreational_drugs</td><td>Recreational Drugs   </td><td><code>optional</code> </td><td><code>array contain status if quit on date.</code></td></tr>
-<tr><td >form_counseling</td><td>Counselling   </td><td><code>optional</code></td><td> <code>array contain status if quit on date.</code></td></tr>
-<tr><td >form_exercise_patterns</td><td>Exercise Patterns  </td><td> <code>optional</code></td><td> <code>array contain status if quit on date.</code></td></tr>
-<tr><td >form_hazardous_activities</td><td>Hazardous Activities  </td><td> <code>optional</code></td><td> <code>array contain status if quit on date.</code></td></tr>
-<tr><td >form_userarea12</td><td>Life style Others  </td><td> <code>optional</code> </td><td><code>string</code></td></tr>
-<tr><td colspan="4">&nbsp; <h4>Relatives </h4></td></tr>
-<tr><td >form_relatives_cancer</td><td>Cancer   </td><td><code>optional</code> </td><td><code>string</code></td></tr>
-<tr><td >form_relatives_tuberculosis</td><td>Tuberculosis  </td><td> <code>optional</code></td><td> <code>string</code></td></tr>
-<tr><td >form_relatives_diabetes</td><td>Diabetes   </td><td><code>optional</code></td><td> <code>string</code></td></tr>
-<tr><td >form_relatives_heart_problems</td><td>High Blood Pressure  </td><td> <code>optional</code> </td><td><code>string</code></td></tr>
-<tr><td >form_relatives_stroke</td><td>Stroke   </td><td><code>optional</code></td><td> <code>string</code></td></tr>
-<tr><td >form_relatives_epilepsy</td><td>Epilepsy  </td><td> <code>optional</code> </td><td><code>string</code></td></tr>
-<tr><td >form_relatives_mental_illness</td><td>Mental Illness  </td><td> <code>optional</code></td><td> <code>string</code></td></tr>
-<tr><td >form_relatives_suicide</td><td>Suicide   </td><td><code>optional</code></td><td> <code>string</code></td></tr>
-<tr><td colspan="4">&nbsp; <h4>Biological History</h4> </td></tr>
-<tr><td >form_history_father</td><td>Father's Name   </td><td><code>optional</code></td><td> <code>string</code></td></tr>
-<tr><td >form_history_mother</td><td>Mother's Name  </td><td><code>optional</code></td><td> <code>string</code></td></tr>
-<tr><td >form_history_siblings</td><td>Siblings   </td><td><code>optional</code></td><td> <code>string</code></td></tr>
-<tr><td >form_history_spouse</td><td>Spouse   </td><td><code>optional</code></td><td> <code>string</code></td></tr>
-<tr><td >form_history_offspring</td><td>Child   </td><td><code>optional</code></td><td> <code>string</code></td></tr>
+<tr><td ><code>form_sex</code> <span style="color:red">*</span> </td><td>Patient sex info   </td><td><code>option</code></td></tr>
+<tr><td ><code>form_status</code> <span style="color:red">*</span> </td><td>Patient marital status   </td><td><code>option</code></td></tr>
+<tr><td ><code>form_photo</code>  <span style="color:red">*</span> </td><td>Patient Photograph   </td><td><code>base64_encode file format</code></td></tr>
+<tr><td ><code>form_genericname1</code></td><td>Patient Blood Group  </td><td><code>option</code></td></tr>
+<tr><td colspan="3">&nbsp;<h4>Address</h4></td></tr>
+<tr><td ><code>form_street</code></td><td>Patient Address Door no, Street name  </td><td><code>string</code></td></tr>
+<tr><td ><code>form_genericval2</code></td><td>Patient Address Village  </td><td><code>string</code></td></tr>
+<tr><td ><code>form_genericval1</code></td><td>Patient Address Taluk   </td><td><code>string</code></td></tr>
+<tr><td ><code>form_city</code></td><td>Patient Address  City </td><td><code>string</code></td></tr>
+<tr><td ><code>form_genericname2</code> <span style="color:red">*</span> </td><td>Patient Address  District </td><td><code>string</code></td></tr>
+<tr><td ><code>form_state</code> <span style="color:red">*</span> </td><td>Patient Address  State </td><td><code>option</code></td></tr>
+<tr><td ><code>form_postal_code</code> <span style="color:red">*</span> </td><td>Patient Address Pin code  </td><td><code>numeric</code></td></tr>
+<tr><td colspan="3">&nbsp;<h4>Contact</h4></td></tr>
+<tr><td ><code>form_phone_cell</code></td><td>Patient Mobile Number  </td><td></td><td><code>numeric</code></td></tr>
+<tr><td ><code>form_phone_home</code></td><td>Patient Land line   </td><td><code>numeric</code></td></tr>
+<tr><td ><code>form_email</code></td><td>Patient Contact Email   </td><td><code>email address format</code></td></tr>
+<tr><td colspan="3">&nbsp;<h4>Emergency</h4></td></tr>
+<tr><td ><code>form_guardiansname</code></td><td>Patient Emergency Contact Name  </td><td><code>numeric</code></td></tr>
+<tr><td ><code>form_contact_relationship</code></td><td>Patient Emergency Contact RelationShip   </td><td><code>string</code></td></tr>
+<tr><td ><code>form_phone_contact</code></td><td>Patient Emergency Contact Phone   </td><td><code>numeric</code></td></tr>
+<tr><td colspan="3">&nbsp;<h4>Employer with </h4></td></tr>
+<tr><td ><code>form_occupation</code> <span style="color:red">*</span> </td><td>Patient Occupation   </td><td> <code>alphanumeric</code></td></tr>
+<tr><td ><code>form_em_name</code> <span style="color:red">*</span> </td><td>Patient Employer Name  </td><td><code>string</code></td></tr>
+<tr><td ><code>form_em_street</code> <span style="color:red">*</span> </td><td>Patient Employer Address   </td><td> <code>string</code></td></tr>
+<tr><td colspan="3">&nbsp;<h4>Risk</h4> </td></tr>
+<tr><td ><code>form_usertext11</code></td><td>Risk Factors  </td><td><code>array of risk factors</code></td></tr>
+<tr><td ><code>form_userarea11</code></td><td>Risk Factors Others  </td><td><code>array</code></td></tr>
+<tr><td ><code>form_exams</code></td><td>Exams/Tests  </td><td> <code>array contain  Exams/Tests  name  and result </code></td></tr>
+<tr><td ><code>radio_exams</code></td><td>Exams/Tests options  </td><td><code>array contain  Exams/Tests options  </code></td></tr>
+<tr><td colspan="3">&nbsp;<h4>Life style</h4></td></tr>
+<tr><td ><code>form_text_tobacco</code></td><td>Tobacco Type   </td><td> <code>string</code></td></tr>
+<tr><td ><code>form_tobacco</code></td><td>Tobacco   </td><td> <code>array contain  frequency of usage and status if quit on date.</code></td></tr>
+<tr><td ><code>form_coffee</code></td><td>Coffee   </td><td> <code>array contain status if quit on date.</code></td></tr>
+<tr><td ><code>form_alcohol</code></td><td>Alcohol   </td><td><code>array contain status if quit on date.</code></td></tr>
+<tr><td ><code>form_recreational_drugs</code></td><td>Recreational Drugs   </td><td><code>array contain status if quit on date.</code></td></tr>
+<tr><td ><code>form_counseling</code></td><td>Counselling   </td><td> <code>array contain status if quit on date.</code></td></tr>
+<tr><td ><code>form_exercise_patterns</code></td><td>Exercise Patterns  </td><td> <code>array contain status if quit on date.</code></td></tr>
+<tr><td ><code>form_hazardous_activities</code></td><td>Hazardous Activities  </td><td> <code>array contain status if quit on date.</code></td></tr>
+<tr><td ><code>form_userarea12</code></td><td>Life style Others  </td><td><code>string</code></td></tr>
+<tr><td colspan="3">&nbsp; <h4>Relatives </h4></td></tr>
+<tr><td ><code>form_relatives_cancer</code></td><td>Cancer   </td><td><code>string</code></td></tr>
+<tr><td ><code>form_relatives_tuberculosis</code></td><td>Tuberculosis  </td><td> <code>string</code></td></tr>
+<tr><td ><code>form_relatives_diabetes</code></td><td>Diabetes   </td><td> <code>string</code></td></tr>
+<tr><td ><code>form_relatives_heart_problems</code></td><td>High Blood Pressure  </td><td><code>string</code></td></tr>
+<tr><td ><code>form_relatives_stroke</code></td><td>Stroke   </td><td> <code>string</code></td></tr>
+<tr><td ><code>form_relatives_epilepsy</code></td><td>Epilepsy  </td><td><code>string</code></td></tr>
+<tr><td ><code>form_relatives_mental_illness</code></td><td>Mental Illness  </td><td> <code>string</code></td></tr>
+<tr><td ><code>form_relatives_suicide</code></td><td>Suicide   </td><td> <code>string</code></td></tr>
+<tr><td colspan="3">&nbsp; <h4>Biological History</h4> </td></tr>
+<tr><td ><code>form_history_father</code></td><td>Father's Name   </td><td> <code>string</code></td></tr>
+<tr><td ><code>form_history_mother</code></td><td>Mother's Name  </td><td> <code>string</code></td></tr>
+<tr><td ><code>form_history_siblings</code></td><td>Siblings   </td><td> <code>string</code></td></tr>
+<tr><td ><code>form_history_spouse</code></td><td>Spouse   </td><td> <code>string</code></td></tr>
+<tr><td ><code>form_history_offspring</code></td><td>Child   </td><td> <code>string</code></td></tr>
 </tbody></table>
 
 ### New Patient Register ON POST [POST]
