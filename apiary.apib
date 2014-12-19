@@ -219,8 +219,8 @@ The server does not meet one of the preconditions that the requester put on the 
 <ul>
 <li><p class="tocColumnItemText"><code><strong>auth_key</strong></code> <code>string</code> - unique UUID of the User in the system , it is to be passed on Headers</p></li>
 <li><p class="tocColumnItemText"><code><strong>auth</strong></code> <code>string</code> - authenticate user stay on login to request and retrieve data from server  or logout, it is to be passed on Headers</p></li>
-<li><p class="tocColumnItemText"><code><strong>success</strong></code> <code>object</code> - Client request with REQUEST_METHOD , URL pattern and Parameters to the server, Server response as an success object .</p></li>
-<li><p class="tocColumnItemText"><code><strong>failure</strong></code> <code>object</code> -  Client request with invalid REQUEST_METHOD or invalid URL pattern or invalid Parameters to the server, Server response as an failure object .</p></li>
+<li><p class="tocColumnItemText"><code><strong>StatusCode</strong></code> <code>200</code> - Client request with REQUEST_METHOD , URL pattern and Parameters to the server, Server response as an success object .</p></li>
+<li><p class="tocColumnItemText"><code><strong>StatusCode</strong></code> <code>4xx, 5xx - x can be any number between 0-9</code> -  Client request with invalid REQUEST_METHOD or invalid URL pattern or invalid Parameters to the server, Server response as an failure object .</p></li>
 </ul>
 
 <table style="width: 100%; margin: 12px 0 0 0;">
