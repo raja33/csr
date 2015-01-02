@@ -440,39 +440,6 @@ yyyy/mm/dd ,  also mm-dd-yyyy, and mm.dd.yyyy, Age is an 3 digit Numeric Value.<
     
                 {"success":{"Patient Details":{"pid":"internal_id","fname":"FIRST NAME","lname":"LAST NAME","DOB":"11-DEC-2014","DOB_YMD":"2014-12-11","street":"Door no, Street namE","genericval1":"Taluk","genericname2":"District","genericval2":"Village","city":"City","state":"Kerala","country_code":"IND","postal_code":"600001","occupation":"Occupation","phone_cell":"9876543210","status":"single","sex":"Female","pubpid":"UNIQUEID","genericname1":"O+","history_mother":"Mothers 's Name","guardiansname":"Emergency","Age_flag":"0","Regdate":2014-12-11 12:12:12,"Since":"0 day","history_father":"Father 's name","Age":"16 years","images":"csr_data\/72-DB05A752FF6DA04229BEF6A60765CA01.png"}}}
 
-# Group Export-Import
-
-## Export bulk data [/bulk/export]
-
-<pre class="json">
-<code><span> Request method : POST<span>
-<span>Resource URI : /bulk/export<span>
-<span>Request Content type :application/json<span></code>
-</pre>
-
-<table><tbody>
-<tr><td colspan="2"><strong>Required Header Parameters</strong></td></tr>
-<tr><td >auth</td><td><code>login</code></td></tr>
-<tr><td >auth_key</td><td><code>91B0B365-7BF7-4724-FEC3-4848E07312B5</code></td></tr>
-</tbody></table>
-
-
-### Export bulk data ON POST [POST]
-
-
-+ Request (application/json)
-
-    + Headers
-
-            auth: login
-            auth_key: 91B0B365-7BF7-4724-FEC3-4848E07312B5
-            
-+ Response 200 (application/json)
-    
-    + Body
-    
-                {"success":{"Patient Details":{"pid":"internal_id","fname":"FIRST NAME","lname":"LAST NAME","DOB":"11-DEC-2014","DOB_YMD":"2014-12-11","street":"Door no, Street namE","genericval1":"Taluk","genericname2":"District","genericval2":"Village","city":"City","state":"Kerala","country_code":"IND","postal_code":"600001","occupation":"Occupation","phone_cell":"9876543210","status":"single","sex":"Female","pubpid":"UNIQUEID","genericname1":"O+","history_mother":"Mothers 's Name","guardiansname":"Emergency","Age_flag":"0","Regdate":2014-12-11 12:12:12,"Since":"0 day","history_father":"Father 's name","Age":"16 years","images":"csr_data\/72-DB05A752FF6DA04229BEF6A60765CA01.png"}}}
-
 # Group Find Patient
 
 ## Patient Search [/client/search]
@@ -510,3 +477,36 @@ yyyy/mm/dd ,  also mm-dd-yyyy, and mm.dd.yyyy, Age is an 3 digit Numeric Value.<
             {"success":[{"id":"83","fname":"Rajasekar","lname":"Jeyakumar","mname":"","DOB":"03-Nov-2014","street":"Door no, Street name","postal_code":"628151","city":"City","state":"Tamil Nadu","country_code":"IND","occupation":"","phone_cell":"098-765-4321","status":"married","DATE":"16-Dec-2014 04:33 PM","sex":"Female","pubpid":"Biometric83","pid":"83","genericname1":"B+","genericval1":"Taluk","genericname2":"District","genericval2":"Village","mothersname":"Mothers","guardiansname":"Emr c.N","Name":"Rajasekar Jeyakumar","DOB_YMD":"2014-11-03","Age_flag":"0","mothers_id":"UND::1418711572212219750","mothers_name":"Mothers","fathers_id":"UND::14187115721387416907","fathers_name":"Father","images":"csr_data\/83-A8C074080B30ED63F13AB74D1BF39AE1.png","Age":"1 month 1 week"}],"Total-data":"1"}
 
 
+
+# Group Export-Import
+
+## Export bulk data [/bulk/export]
+
+<pre class="json">
+<code><span> Request method : POST<span>
+<span>Resource URI : /bulk/export<span>
+<span>Request Content type :application/json<span></code>
+</pre>
+
+<table><tbody>
+<tr><td colspan="2"><strong>Required Header Parameters</strong></td></tr>
+<tr><td >auth</td><td><code>login</code></td></tr>
+<tr><td >auth_key</td><td><code>91B0B365-7BF7-4724-FEC3-4848E07312B5</code></td></tr>
+</tbody></table>
+
+
+### Export bulk data ON POST [POST]
+
+
++ Request (application/json)
+
+    + Headers
+
+            auth: login
+            auth_key: 91B0B365-7BF7-4724-FEC3-4848E07312B5
+            
++ Response 200 (application/json)
+    
+    + Body
+    
+                {"success":{"Patient Details":{"pid":"internal_id","fname":"FIRST NAME","lname":"LAST NAME","DOB":"11-DEC-2014","DOB_YMD":"2014-12-11","street":"Door no, Street namE","genericval1":"Taluk","genericname2":"District","genericval2":"Village","city":"City","state":"Kerala","country_code":"IND","postal_code":"600001","occupation":"Occupation","phone_cell":"9876543210","status":"single","sex":"Female","pubpid":"UNIQUEID","genericname1":"O+","history_mother":"Mothers 's Name","guardiansname":"Emergency","Age_flag":"0","Regdate":2014-12-11 12:12:12,"Since":"0 day","history_father":"Father 's name","Age":"16 years","images":"csr_data\/72-DB05A752FF6DA04229BEF6A60765CA01.png"}}}
